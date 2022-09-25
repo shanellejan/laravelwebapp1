@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html -->
+<html lang="en" style="" class=" js no-touch no-csstransforms3d csstransitions webkit chrome win js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Storing Images in MySQL with PHP</title>
+
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.phpro.org/rss/all.rss">
+		<meta name="keywords" content="phpro, php, mysql, testing">
+		<meta name="description" content="PHPRO.ORG">
+		<meta name="author" content="Kevin Waterson">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="http://www.phpro.org/assets/favicon.ico" type="image/x-icon"> 
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="verify-v1" content="+J21X+3KbH1F9F9+Sel4Pab3hJlNw7mdm85lPLFeHVU=">
+
+		<!-- Web Fonts  -->
+				<link href="./Storing Images in MySQL with PHP_files/css" rel="stylesheet" type="text/css">
+
+		<!-- Libs CSS -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/bootstrap.css">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/fonts/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/vendor/owl-carousel/owl.carousel.css" media="screen">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/vendor/owl-carousel/owl.theme.css" media="screen">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/vendor/magnific-popup/magnific-popup.css" media="screen">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/theme.css">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/theme-elements.css">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/theme-animate.css">
+
+		<!-- Current Page Styles -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/skins/blue.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/custom.css">
+
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/theme-responsive.css">
+
+		<!-- Head Libs -->
+		<script type="text/javascript" async="" src="./Storing Images in MySQL with PHP_files/linkid.js"></script><script async="" src="./Storing Images in MySQL with PHP_files/analytics.js"></script><script async="" type="text/javascript" src="./Storing Images in MySQL with PHP_files/ca-pub-1399602330070151.js"></script><script src="./Storing Images in MySQL with PHP_files/modernizr.js"></script>
+
+		<!-- Blog CSS -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/theme-blog.css" media="screen">
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/phpro.css" media="screen">
+
+		<!-- dataTables css -->
+		<link rel="stylesheet" href="http://www.phpro.org/assets/css/jquery.dataTables.css">
+		<!-- <link rel="stylesheet" href="/assets/css/dataTables.bootstrap.css" /> -->
+		<!--[if IE]>
+			<link rel="stylesheet" href="/assets/css/ie.css">
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script src="/assets/vendor/respond.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+				</style>
+	<script type="text/javascript" charset="UTF-8" src="./Storing Images in MySQL with PHP_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./Storing Images in MySQL with PHP_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./Storing Images in MySQL with PHP_files/stats.js"></script></head>
+	<body class="sticky-menu-active" style="padding-top: 106px;">
+
+		<div class="body" style="min-height: 109.993993878365px;">
+			<header>
+				<div class="container">
+					<h1 class="logo logo-sticky-active">
+					<a href="http://www.phpro.org/">
+							<img alt="PHPRO.ORG" width="111" height="54" data-sticky-width="82" data-sticky-height="40" src="./Storing Images in MySQL with PHP_files/logo.png" style="display: inline-block; width: 82px; height: 40px; top: 28px;">
+						</a>
+					</h1>
+					<div class="search">
+					<form id="searchForm" action="http://www.phpro.org/search" method="get" novalidate="novalidate">
+							<div class="input-group">
+								<input type="text" class="form-control search" name="q" id="q" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="submit"><i class="icon icon-search"></i></button>
+								</span>
+							</div>
+						</form>
+					</div>
+					<nav>
+						<ul class="nav nav-pills nav-top">
+							<li>
+							<a href="http://www.phpro.org/about"><i class="icon icon-angle-right"></i>About Us</a>
+							</li>
+							<li>
+							<a href="http://www.phpro.org/contact"><i class="icon icon-angle-right"></i>Contact Us</a>
+							</li>
+							<li class="phone">
+								<span><i class="icon icon-phone"></i>(+61) 434 868 173</span>
+							</li>
+							<li>
+							<a href="http://www.phpro.org/rss/phpro.rss"><i class="icon icon-angle-right"></i>RSS</a>
+							</li>
+							<li>
+							<a href="http://www.phpro.org/user/login"><i class="icon icon-angle-right"></i>Login</a>
+							</li>
+						</ul>
+					</nav>
+					<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="icon icon-bars"></i>
+					</button>
+				</div>
+				<div class="navbar-collapse nav-main-collapse collapse">
+					<div class="container">
+<!--
+						<div class="social-icons">
+							<ul class="social-icons">
+								<li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+								<li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+								<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+							</ul>
+						</div>
+-->
+<nav class="nav-main mega-menu">
+	<ul class="nav nav-pills nav-main" id="mainMenu">
+		<li><a href="http://www.phpro.org/">Home</a></li>
+		<li><a href="http://www.phpro.org/quiz">Testing</a></li>
+<!--
+							<li class="dropdown">
+									<a class="dropdown-toggle" href="#">Services<i class="icon icon-angle-down"></i></a>
+									<ul class="dropdown-menu">
+									<li><a href="/services">Our Services</a></li>
+									<li><a href="/services/websites">Websites</a></li>
+									<li><a href="/services/testing">Application Testing</a></li>
+									<li><a href="/services/design">Design</a></li>
+									<li><a href="/services/hosting">Hosting</a></li>
+									</ul>
+								</li>
+-->
+		<li class="dropdown">
+		<a class="dropdown-toggle" href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#">About Us<i class="icon icon-angle-down"></i></a>
+			<ul class="dropdown-menu">
+				<li><a href="http://www.phpro.org/about">About Us</a></li>
+			</ul>
+		</li>
+
+		<li><a href="http://www.phpro.org/tutorials">Tutorials</a></li>
+		<li><a href="http://www.phpro.org/articles">Articles</a></li>
+		<li><a href="http://www.phpro.org/examples">Examples</a></li>
+		<li><a href="http://www.phpro.org/classes">Classes</a></li>
+
+		<li class="dropdown">
+			<a class="dropdown-toggle" href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#">Contact Us<i class="icon icon-angle-down"></i></a>
+			<ul class="dropdown-menu">
+				<li><a href="http://www.phpro.org/contact">Contact Us</a></li>
+			</ul>
+		</li>
+<!-- begin user NOT logged in -->
+
+
+		<li id="headerAccount" class="dropdown mega-menu-item mega-menu-signin signin">
+			<a href="http://www.phpro.org/user/login" class="dropdown-toggle">
+			<i class="icon icon-user"></i> Sign In
+			<i class="icon icon-angle-down"></i>
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+					<div class="mega-menu-content">
+					<div class="row">
+					<div class="col-md-12">
+
+					<div class="signin-form">
+
+					<span class="mega-menu-sub-title">Sign In</span>
+
+					<form method="post" id="userLogin" action="http://www.phpro.org/user/login">
+					<div class="row">
+					<div class="form-group">
+					<div class="col-md-12">
+					<label>E-mail Address</label>
+					<input type="email" name="email" placeholder="Email Address" class="form-control input-lg" value="">
+					</div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="form-group">
+					<div class="col-md-12">
+					<a href="http://www.phpro.org/user/lostpassword" id="headerRecover" class="pull-right">(Lost Password?)</a>
+					<label>Password</label>
+					<input type="password" name="password" class="form-control input-lg" value="">
+					</div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-md-6">
+					<span class="remember-box checkbox">
+					<label for="rememberme">
+					<input type="checkbox" name="rememberme" id="rememberme">Remember Me
+					</label>
+					</span>
+					</div>
+					<div class="col-md-6">
+					<input type="submit" data-loading-text="Loading..." class="btn btn-primary pull-right push-bottom" value="Login">
+					</div>
+					</div>
+					</form>
+
+					<p class="sign-up-info">Don't have an account yet? <a id="headerSignUp" href="http://www.phpro.org/user/login">Sign Up!</a></p>
+
+					</div>
+
+					<div class="signup-form">
+					<span class="mega-menu-sub-title">Create Account</span>
+
+					<form method="post" id="userRegister" action="http://www.phpro.org/user/register">
+					<div class="row">
+					<div class="form-group">
+					<div class="col-md-12">
+					<label>E-mail Address</label>
+					<input type="text" name="email" class="form-control input-lg" value="">
+					</div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="form-group">
+					<div class="col-md-6">
+					<label>Password</label>
+					<input type="password" name="password" class="form-control input-lg" value="">
+					</div>
+					<div class="col-md-6">
+					<label>Re-enter Password</label>
+					<input type="password" name="cpassword" class="form-control input-lg" value="">
+					</div>
+					</div>
+					</div>
+					<div class="row">
+
+					<div class="form-group">
+					<div class="col-md-6">
+					<label>Captcha</label>
+					<br>
+
+					<img src="./Storing Images in MySQL with PHP_files/captcha.php" alt="SKF Captcha" class="push-bottom">
+					</div>
+					<div class="col-md-6">
+					<label>Enter Captcha</label>
+					<input name="captcha" type="text" value="" class="form-control" required="">
+					</div>
+					</div>
+
+
+					<div class="col-md-6">
+					<input type="submit" data-loading-text="Loading..." class="btn btn-primary pull-right push-bottom" value="Create Account">
+					</div>
+					</div>
+					</form>
+
+					<p class="log-in-info">Already have an account? <a id="headerSignIn" href="http://www.phpro.org/user/login">Log In!</a></p>
+					</div>
+
+					<div class="recover-form">
+					<span class="mega-menu-sub-title"><span class="lw0el8" id="lw0el8_4">Reset</span> My Password</span>
+					<p>Complete the form below to receive an email with the authorization code needed to reset your password.</p>
+
+					<form method="post" action="http://www.phpro.org/user/resetPassword">
+					<div class="row">
+					<div class="form-group">
+					<div class="col-md-12">
+					<label>E-mail Address</label>
+					<input type="text" class="form-control input-lg" value="">
+					</div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-md-12">
+					<input type="submit" data-loading-text="Loading..." class="btn btn-primary pull-right push-bottom" value="Submit">
+					</div>
+					</div>
+					</form>
+
+					<p class="log-in-info">Already have an account? <a id="headerRecoverCancel" href="http://www.phpro.org/user/login">Log In!</a></p>
+					</div>
+
+					</div>
+					</div>
+					</div>
+				</li>
+			</ul>
+
+<!-- end user NOT logged in -->
+
+
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+
+		</li>
+	</ul>
+</nav>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+
+				<section class="page-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+								<li><a href="http://www.phpro.org/tutorials">tutorials</a></li>
+									<li class="active">Storing Images in MySQL with PHP</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+							<h2>Storing Images in MySQL with PHP</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="container">
+<script async="" src="./Storing Images in MySQL with PHP_files/adsbygoogle.js"></script>
+<!-- Tutorial Top -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-1399602330070151" data-ad-slot="5817530055" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1140px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1140px;background-color:transparent"><iframe width="1140" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+					<div class="row">
+						<div class="col-md-9">
+							<div class="blog-posts single-post">
+
+								<article class="post post-large blog-single-post">
+<!--
+									<div class="post-image">
+										<div class="owl-carousel" data-plugin-options='{"items":1}'>
+											<div>
+												<div class="img-thumbnail">
+													<img class="img-responsive" src="/assets/img/blog/blog-image-1.jpg" alt="">
+												</div>
+											</div>
+											<div>
+												<div class="img-thumbnail">
+													<img class="img-responsive" src="/assets/img/blog/blog-image-2.jpg" alt="">
+												</div>
+											</div>
+										</div>
+									</div>
+-->
+									<div class="post-date">
+									<span class="day">08</span>
+									<span class="month">May</span>
+									</div>
+
+									<div class="post-content">
+
+									<h2><a href="http://www.phpro.org/tutorials/blog-post.html">Storing Images in MySQL with PHP</a></h2>
+
+										<div class="post-meta">
+											<span><i class="icon icon-user"></i> By <a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#">Kevin Waterson</a> </span>
+											<span><i class="icon icon-tag"></i> <a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#">1758815</a> </span>
+											<span><i class="icon icon-comments"></i> <a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#">12 Comments</a></span>
+										</div>
+										<h1>An introduction to BLOBs</h1>
+<h2>Storing images in <a href="http://www.mysql.com/">MySQL</a></h2>
+<p><i>by Kevin Waterson</i></p>
+
+<h2>Contents</h2>
+<ol>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#1">Isn't this a bad idea?</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#2">What is a BLOB?</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#3">Creating an image table</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#4">The upload form.</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#5">Uploading the image</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#6">The upload() function?</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#7">Display an image from the database</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#8">Displaying all the information</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#9">Storing Thumbnails</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#10">Another Approach</a></li>
+</ol>
+
+<a name="1"><h2>Isn't this a bad idea?</h2></a>
+<p>
+This arguement continues to rage and many lives have been lost trying to prove that this is a Bad Idea(tm). The facts are this method of binary storage is very successful and has many advantages over file system storage. Some advantages are:
+</p>
+<ul>
+<li>Referential integrity (ACID Consistency)</li>
+<li>Ease of backup</li>
+<li>Saving of Inodes</li>
+<li>Easy categorisation</li>
+<li>No Name collisions</li>
+<li>Storage of Meta Data (data about data)
+</li><li>Central point of operations</li>
+<li>Replication over multiple servers</li>
+</ul>
+<p>Many of the ney sayers will have you believe that storing of images or other binary data creates too much overhead. A large database can be stored on a RAW partition and infact be faster as it has no filesystem overhead to contend with. Some would say that access is slow when SELECTing from the data base, but most of these issues are caused by coders doing things
+like:<br>
+SELECT * FROM image_table<br>
+when all they need is image ID.
+</p>
+
+<p>
+It should be remembered also that filesystems are not immune to constraints. The ext3 filesystem only allows 32000 sub-directories, so if each user is given an upload directory a filesystem limitation is effected and only a maximun of 32000 users is possible. This of course can be overcome by doing things like<br>
+/S/t/e/Steve.gif<br>
+but this of course raised the issue of referential integrity and complexity. Should the system be a webfarm, the issue of how to sync all web servers to have all the files also becomes problematic. The ext3 filesystem itself tries to mimic database operations with the implentation of dir_index option. Funnily enough, this uses a btree index on directories, which is the base for some databases. Many newer filesystems are practically database implementations themselves, and many UNIX filesystems use filenames as indexes to inodes which point to files, a very database-esque implementation.
+</p>
+<p>
+As PHP has grown, so has the popularity of *nix and apache which has given rise to the LAMP stack (Linux Apache MySQL PHP). The most common filesystem used in Linux is ext3. The ext3 filesystem provides excellent journalling at the expense of speed, and is the slowest filesystem I have tested.
+</p><p>
+Some have said that a central point of operations is a central point of failure, should the database
+be corrupted or destroyed everything is lost. We see the same for the file system, it is a central
+point of failure also should it become corrupted. Infact the file system causes more problems with
+the possibility of running out of inodes. Then there is the constant maintenance of referential 
+integrity to ensure the database has the correct path to the file on the file system, this can cause
+a lot of work when moving from one machine to another. Referential intregrity is assured with a database
+backup. Of course, there is no greater test for referential integrity than moving an application from one filesystem to another, such as from Windows to Linux. We've all been through that nightmare.
+</p>
+<p>
+Backing up data from a database is a simple one step operation that allows easy restoration or transfer of the data. Can you imagine a completed dataset spread out over 30,000 files instead of a single backup file? For those obsessed with performance issues, the cycles required to tar and bzip2 that amount files at the same time, PLUS and sqldump of the of all the rest of the information, then glue it together and send it off to backup storage (again on the filesystem). This method is full of dangers particularly if the process is interupted, there is no rollback for the filesystem.
+</p>
+<p>
+When storing files on a file system you must have a unique name for each file. Should your application have an upload directory for example, and two users tried to upload frog.jpg at the same time the results would be less than desirable. You could of course have seperate upload directories for each user, but then we get back to the issue of referential integrity and limitations of the ext3 file system.
+</p>
+<p>
+Most of the arguements against the storage of images, or binary data, in a database focus on performance and claims that 'file systems were made to do that'. This is not to say that the filesystem is a bad idea either. The real issue becomes one of application and innovation. The greatest constraint you can place, is on yourself by not being open to new advances, and we are constrained to age old technology. Filesystem storage is not always the universal solution for every binary storage problem ever encountered, and neither is database storage. For many implementations, filesystem storage is optimal and preferable, but again the fatal flaw appears to be the insistence that one approach is right 100% of the time...which 99% of the time is false.
+</p>
+<p>The <a href="http://terraserver.microsoft.com/">Microsoft Terraserver</a> contains over
+3 terrabytes of images stored in database BLOBs.
+</p>
+<p>
+Quite often it is preferable not to allocate file permissions to applications. By storing images or binary data within the database, access is limitted to application code and file system priveleges are not available for escalation.
+</p>
+
+<p>
+With all that said, there are several reasons not to store images or other binary data in a database.
+</p>
+<ul>
+<li>Better caching</li>
+<li>External proxies</li>
+<li>MySQL can store 'normal" data better</li>
+<li>Data through-put is higher with the filesystem</li>
+<li>Speed of retrieval</li>
+</ul>
+<p>
+Depending on yuor application goal will decide which method of storage/retrieval is best. No one blanket solution fits all needs.
+</p>
+<a name="2"><h2>What is a BLOB?</h2></a>
+<p>
+Binary Large Object. In short, a BLOB is a field type for storing Binary Data. MySQL has four
+BLOB types.
+</p><ul>
+<li>BLOB</li>
+<li>TINYBLOB</li>
+<li>MEDIUMBLOB</li>
+<li>LONGBLOB</li>
+</ul>
+<p></p>
+<p>
+For more information on this we highly recommend you read the <a href="http://www.mysql.com/">MySQL</a> manual.
+</p>
+
+<a name="3"><h2>Creating an image table?</h2></a>
+<p>
+Of course we need to create a table to store our images in. Here is a simple table
+</p>
+
+<div class="codebox">
+<code>
+<code><span style="color: #000000">
+<br>CREATE&nbsp;TABLE&nbsp;testblob&nbsp;(<br>&nbsp;&nbsp;image_id&nbsp;tinyint(3)&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,<br>&nbsp;&nbsp;image_type&nbsp;varchar(25)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image&nbsp;longblob&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image_size&nbsp;varchar(25)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image_ctgy&nbsp;varchar(25)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image_name&nbsp;varchar(50)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;KEY&nbsp;image_id&nbsp;(image_id)<br>)&nbsp;ENGINE=MyISAM&nbsp;DEFAULT&nbsp;CHARSET=latin1;<br></span>
+</code></code>
+</div>
+
+<p>
+Ok, nothing dramatic here, but lets break it down. First we have an id field, this should be an auto incremented field so we avoid confusion when selecting. Next we have the image type. This is handy as we can use PHP to determine this and use it for sending the correct headers when we need to display the image. Next we have the image_blob field. This is the field that will contain the actual image data. Then we have the image size as detirmined by <a href="http://www.php.net/getimagesize">
+getimagesize()</a>. Then we have a category for our images, you may wish to have have a second table of categories to populate your form dropdown for this. But for our purposes we will not be dealing with the categories field and it is included here only to show possibilities.  Finally, we have the image name. You can add more items to this table such as exif info and descriptions, but for our purposes we will keep it simple.
+</p>
+
+<a name="4"><h2>The upload form.</h2></a>
+<p>
+The upload for is basically the same as for any file upload
+</p>
+
+<div class="codebox">
+<code>
+
+<code><span style="color: #000000">
+<br>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Transitional//EN"<br>&nbsp;&nbsp;"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;<br><br>&nbsp;&nbsp;&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;&lt;title&gt;File&nbsp;Upload&nbsp;To&nbsp;Database&lt;/title&gt;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&lt;h2&gt;Please&nbsp;Choose&nbsp;a&nbsp;File&nbsp;and&nbsp;click&nbsp;Submit&lt;/h2&gt;<br>&nbsp;&nbsp;&lt;form&nbsp;enctype="multipart/form-data"&nbsp;action="<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]);</span><span style="color: #0000BB">?&gt;</span>"&nbsp;method="post"&gt;<br>&nbsp;&nbsp;&lt;input&nbsp;type="hidden"&nbsp;name="MAX_FILE_SIZE"&nbsp;value="99999999"&nbsp;/&gt;<br>&nbsp;&nbsp;&lt;div&gt;&lt;input&nbsp;name="userfile"&nbsp;type="file"&nbsp;/&gt;&lt;/div&gt;<br>&nbsp;&nbsp;&lt;div&gt;&lt;input&nbsp;type="submit"&nbsp;value="Submit"&nbsp;/&gt;&lt;/div&gt;<br>&nbsp;&nbsp;&lt;/form&gt;<br><br>&lt;/body&gt;&lt;/html&gt;<br></span>
+</code></code>
+</div>
+<p>
+No surprises here, although we do stress you have the hidden field for MAX_FILE_SIZE. This can be handy for not allowing images that are too large to be uploaded. Also it is important to use the enctype="multipart/form-data" so that the server knows what is coming at it.
+</p>
+
+<a name="5"><h2>Uploading the image.</h2></a>
+<p>
+Here we get funky and can stick the image into the database. As with all user input it is vital that it is checked with some sort of sanity checking to be sure we are getting what we asked for. In this case, we are asking for an image files of a type that is supported by <a href="http://www.phpro.org/manual/function.getimagesize.html">getimagesize</a>. First of all, we need to check that when somebody accesses our page the they have submitted a file. If they have not, we can throw an exception with a message and if they have, we can call the upload() function that we will create below:
+</p>
+<div class="codebox">
+<code><span style="color: #000000">
+<br><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/***&nbsp;check&nbsp;if&nbsp;a&nbsp;file&nbsp;was&nbsp;submitted&nbsp;***/<br></span><span style="color: #007700">if(!isset(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">]))<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Please&nbsp;select&nbsp;a&nbsp;file&lt;/p&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>else<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">upload</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;give&nbsp;praise&nbsp;and&nbsp;thanks&nbsp;to&nbsp;the&nbsp;php&nbsp;gods&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Thank&nbsp;you&nbsp;for&nbsp;submitting&lt;/p&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;h4&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">().</span><span style="color: #DD0000">'&lt;/h4&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br></span><span style="color: #0000BB">?&gt;<br></span>
+</span>
+</code></div>
+
+<a name="6"><h2>The upload function?</h2></a>
+<p>
+Here we need to create a function that does several things. An outline might look like this.
+</p>
+<div class="codebox">
+<code><span style="color: #000000">
+<br>/*<br>&nbsp;*&nbsp;Check&nbsp;the&nbsp;file&nbsp;is&nbsp;of&nbsp;an&nbsp;allowed&nbsp;type<br>&nbsp;*&nbsp;Check&nbsp;if&nbsp;the&nbsp;uploaded&nbsp;file&nbsp;is&nbsp;no&nbsp;bigger&nbsp;thant&nbsp;the&nbsp;maximum&nbsp;allowed&nbsp;size<br>&nbsp;*&nbsp;connect&nbsp;to&nbsp;the&nbsp;database<br>&nbsp;*&nbsp;Insert&nbsp;the&nbsp;data<br>&nbsp;*/<br></span>
+</code></div>
+<p>
+We have already checked that an image has been uploaded with the first if statement. We should also check that it is an uploaded file So now we need to check if the file is of an allowed type with <a href="http://www.php.net/getimagesize">getimagesize()</a>. We will begin our function with that and build on it from there.
+</p>
+
+<div class="codebox">
+<code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;*<br>&nbsp;*&nbsp;the&nbsp;upload&nbsp;function<br>&nbsp;*&nbsp;<br>&nbsp;*&nbsp;@access&nbsp;public<br>&nbsp;*<br>&nbsp;*&nbsp;@return&nbsp;void<br>&nbsp;*<br>&nbsp;*/<br></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">upload</span><span style="color: #007700">(){<br></span><span style="color: #FF8000">/***&nbsp;check&nbsp;if&nbsp;a&nbsp;file&nbsp;was&nbsp;uploaded&nbsp;***/<br></span><span style="color: #007700">if(</span><span style="color: #0000BB">is_uploaded_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">])&nbsp;!=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;&nbsp;get&nbsp;the&nbsp;image&nbsp;info.&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;assign&nbsp;our&nbsp;variables&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #DD0000">'mime'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imgfp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'rb'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$maxsize&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">99999999</span><span style="color: #007700">;<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;&nbsp;check&nbsp;the&nbsp;file&nbsp;is&nbsp;less&nbsp;than&nbsp;the&nbsp;maximum&nbsp;file&nbsp;size&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'size'</span><span style="color: #007700">]&nbsp;&lt;&nbsp;</span><span style="color: #0000BB">$maxsize&nbsp;</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;connect&nbsp;to&nbsp;db&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysql:host=localhost;dbname=testblob"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;error&nbsp;mode&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;our&nbsp;sql&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;testblob&nbsp;(image_type&nbsp;,image,&nbsp;image_size,&nbsp;image_name)&nbsp;VALUES&nbsp;(?&nbsp;,?,&nbsp;?,&nbsp;?)"</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;bind&nbsp;the&nbsp;params&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$imgfp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_LOB</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;execute&nbsp;the&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;throw&nbsp;an&nbsp;exception&nbsp;is&nbsp;image&nbsp;is&nbsp;not&nbsp;of&nbsp;type&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"File&nbsp;Size&nbsp;Error"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>else<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;file&nbsp;is&nbsp;not&nbsp;less&nbsp;than&nbsp;the&nbsp;maximum&nbsp;allowed,&nbsp;print&nbsp;an&nbsp;error<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Unsupported&nbsp;Image&nbsp;Format!"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+
+<a name="7"><h2>Displaying the image</h2></a>
+<p>
+Now we have the ability to get the images into the database, we need to be able to get it out. Here we see a simple script to display an image based on its image_id in the database. Of course, you should do more checking on the value of $_GET['image_id'] here as we have no checks for out of bounds if and image_id of 99999 was submitted. We will call this file showfile.php.
+</p>
+
+<div class="codebox">
+<code><span style="color: #000000">
+<br><span style="color: #0000BB">&lt;?php<br><br></span><span style="color: #FF8000">/***&nbsp;some&nbsp;basic&nbsp;sanity&nbsp;checks&nbsp;***/<br></span><span style="color: #007700">if(</span><span style="color: #0000BB">filter_has_var</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_id"</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'image_id'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_VALIDATE_INT</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;assign&nbsp;the&nbsp;image&nbsp;id&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_id"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_SANITIZE_NUMBER_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;connect&nbsp;to&nbsp;the&nbsp;database&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysql:host=localhost;dbname=testblob"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;PDO&nbsp;error&nbsp;mode&nbsp;to&nbsp;exception&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;The&nbsp;sql&nbsp;statement&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;image,&nbsp;image_type&nbsp;FROM&nbsp;testblob&nbsp;WHERE&nbsp;image_id=</span><span style="color: #0000BB">$image_id</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;prepare&nbsp;the&nbsp;sql&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;exceute&nbsp;the&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;fetch&nbsp;mode&nbsp;to&nbsp;associative&nbsp;array&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFetchMode</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">FETCH_ASSOC</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;header&nbsp;for&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;check&nbsp;we&nbsp;have&nbsp;a&nbsp;single&nbsp;image&nbsp;and&nbsp;type&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;headers&nbsp;and&nbsp;display&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_type'</span><span style="color: #007700">]);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;output&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Out&nbsp;of&nbsp;bounds&nbsp;Error"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">PDOException&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Please&nbsp;use&nbsp;a&nbsp;real&nbsp;id&nbsp;number'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br></span><span style="color: #0000BB">?&gt;<br></span>
+</span>
+</code>
+</div>
+
+<a name="8"><h2>Displaying all the information</h2></a>
+<p>
+Now we have the basic building blocks, we could create a script to see all the information about the image that we have stored in our table. The trick here is to avoid sending headers twice. To do this we use two files. the first we will call file.php and we use the above showfile.php in our img tag. Of particular importance here is not to make the mistake mentioned at the beginning of this tutorial and do something silly like<br>
+SELECT * FROM testblob<br>
+This is not required and would slow us down in our query because we would need to store the image itself in memory when we are not going to use it yet. So we simply SELECT the other information from the fields that we do want to show. So our view.php file will look like this below.
+</p>
+
+<div class="codebox">
+<code><span style="color: #000000">
+<br><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/***&nbsp;Check&nbsp;the&nbsp;$_GET&nbsp;variable&nbsp;***/<br></span><span style="color: #007700">if(</span><span style="color: #0000BB">filter_has_var</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_id"</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'image_id'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_VALIDATE_INT</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;image_id&nbsp;variable&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_id"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_SANITIZE_NUMBER_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;try&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;connect&nbsp;to&nbsp;the&nbsp;database&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysql:host=localhost;dbname=testblob"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;PDO&nbsp;error&nbsp;mode&nbsp;to&nbsp;exception&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;The&nbsp;sql&nbsp;statement&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;image_type,&nbsp;image_size,&nbsp;image_name&nbsp;FROM&nbsp;testblob&nbsp;WHERE&nbsp;image_id="</span><span style="color: #007700">.</span><span style="color: #0000BB">$image_id</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;prepare&nbsp;the&nbsp;sql&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;exceute&nbsp;the&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;fetch&nbsp;mode&nbsp;to&nbsp;associative&nbsp;array&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFetchMode</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">FETCH_ASSOC</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;header&nbsp;for&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;array&nbsp;should&nbsp;be&nbsp;3&nbsp;(1&nbsp;for&nbsp;each&nbsp;field)&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;This&nbsp;is&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_name'</span><span style="color: #007700">].</span><span style="color: #DD0000">'&nbsp;from&nbsp;the&nbsp;database&lt;/p&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;img&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_size'</span><span style="color: #007700">].</span><span style="color: #DD0000">'&nbsp;src="showfile.php?image_id='</span><span style="color: #007700">.</span><span style="color: #0000BB">$image_id</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Out&nbsp;of&nbsp;bounds&nbsp;error"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">PDOException&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Please&nbsp;use&nbsp;a&nbsp;valid&nbsp;image&nbsp;id&nbsp;number'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br></span><span style="color: #0000BB">?&gt;<br></span>
+</span>
+</code></div>
+<p>From the above script we can see the first image from the database. At the top of the page it has echoed a little message and the image name from the database. You could, as mentioned earlier store other information about the image in the same way and display it. In this script we also use the image_size field from that we had gained from <a href-"http:="" www.phpro.org="" manual="" function.getimagesize.html"="">getimagesize()</a>. This stores the image width and height in a string that we can use in img tags in the for of:<br>
+&lt;width="270" height="228&gt;"<br>
+So that our HTML to include the looks like this:
+&lt;img width="270" height="228" src="showfile.php?image_id=11" alt="fresh.gif"&gt;<br>
+</p>
+<p>
+Note that we have only called on the information we wanted from the database. If we had tried to SELECT * FROM testblob we would have been getting the image twice, once in the view.php and again in showfile.php. This has a great deal to do with horror stories about binary database storage being slow. Yes there is a performance penalty for this type of storage, but this is minimal and when compared to the ease of storage and retrieval it is insignificant.
+</p>
+<a name="9"><h2>Storing and creating Thumbnails</h2></a>
+<p>
+Traditional wisdom tells that we cannot do this at the same time as we create the images string. Once again, these come with the horror stories of Binary data storage in databases. Many will tell you that you need to make several calls to the database to upload the image and then save the images to disk, then create a new thumbnail image and upload once again. If this were the case, they would be correct in using other methods, however, it is simply poor coding that gets these people into trouble. Two PHP features are your friend here, GD and output buffering. We can use the same file in tmp_name to create two similar input streams, the first containing the image to put in the database, the second to resize to a thumbnail and INSERT. With a small change to our database schema we could
+do something like this..<br>
+First the database tables (feel free to submit optimizations)
+</p>
+<div class="codebox">
+<code><span style="color: #000000">
+<br>CREATE&nbsp;TABLE&nbsp;testblob&nbsp;(<br>&nbsp;&nbsp;image_id&nbsp;tinyint(3)&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,<br>&nbsp;&nbsp;image_type&nbsp;varchar(25)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image&nbsp;longblob&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image_height&nbsp;INT(5),<br>&nbsp;&nbsp;image_width&nbsp;INT(5),<br>&nbsp;&nbsp;image_thumb&nbsp;mediumblob&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;thumb_height&nbsp;INT(5),<br>&nbsp;&nbsp;thumb_width&nbsp;INT(5),<br>&nbsp;&nbsp;image_ctgy&nbsp;varchar(25)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;image_name&nbsp;varchar(50)&nbsp;NOT&nbsp;NULL,<br>&nbsp;&nbsp;KEY&nbsp;image_id&nbsp;(image_id)<br>)&nbsp;ENGINE=MyISAM&nbsp;DEFAULT&nbsp;CHARSET=latin1;<br></span>
+</code></div>
+
+<p>The above dump was from a MySQL 5.* database. With the database in place, we can now add some images to it. We will make a small addition to our form from above by adding some categories for our images. You may choose to have a seperate table to store your categories in and populate the categories dropdown from there. For our purposes today, we will hard code them in.</p>
+<p>
+The upload function itself is not greatly different from the upload function above. All we will be adding is some output buffering and a few functions from the GD image library to create the thumbnail. The database query will also change to facilitate a new category value along with the newly formed image_thumb field. The image_thumb field has been created as a mediumblob for smaller binary storage.
+</p>
+<p>
+Note that the image_size field has been removed in favour of image_width and image_height fields. As we saw above, the size returned by getimagesize is of the type<br>
+&lt;width="270" height="228&gt;"<br>
+The problem here is that it is not valid for XHTML documents, so we need to be a little more creative in producing our image width and height. The first two members of the array returned by getimagesize contain this information and it is a simplel task to get the width and height of the original image and to store it. Using some grade 6 math we can also calculate the width and height of the thumbnail that will be created on the fly.
+</p>
+<p>
+A little math is also required to get the correct aspect ratio of the image, but if you acturally passed grade 6 you should be able to follow. In the following example the form and upload script are combined. By following  the comments in the script below, you should be able to get a grasp of the flow. A category field has been added to the form and this will INSERT the category into the database, however, we will not be making use of it and it is shown here only for the purpose demonstration.
+</p>
+
+<div class="codebox">
+<code><span style="color: #000000">
+<br>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Strict//EN"&nbsp;"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;<br>&lt;html&nbsp;xmlns="http://www.w3.org/1999/xhtml"&nbsp;lang="en"&nbsp;xml:lang="en"&gt;<br>&lt;head&gt;<br>&lt;title&gt;Storing&nbsp;Images&nbsp;in&nbsp;DB&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;h2&gt;Basic&nbsp;upload&nbsp;of&nbsp;image&nbsp;to&nbsp;a&nbsp;database&lt;/h2&gt;<br>&lt;form&nbsp;method="post"&nbsp;action="<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]);&nbsp;</span><span style="color: #0000BB">?&gt;</span>"&nbsp;enctype="multipart/form-data"&gt;<br>Select&nbsp;Image&nbsp;File:<br>&lt;input&nbsp;type="file"&nbsp;name="userfile"&nbsp;&nbsp;size="40"&gt;<br>&lt;input&nbsp;type="hidden"&nbsp;name="MAX_FILE_SIZE"&nbsp;value="10000000"&gt;<br>&lt;select&nbsp;name="image_ctgy"&gt;<br>&lt;option&nbsp;value="animals"&gt;Animals&lt;/option&gt;<br>&lt;option&nbsp;value="vegetables"&gt;Vegetables&lt;/option&gt;<br>&lt;option&nbsp;value="minerals"&gt;Minerals&lt;/option&gt;<br>&lt;/select&gt;<br>&lt;br&nbsp;/&gt;<br>&lt;input&nbsp;type="submit"&nbsp;value="submit"&gt;<br>&lt;/form&gt;<br><br><span style="color: #0000BB">&lt;?php<br><br></span><span style="color: #FF8000">/***&nbsp;check&nbsp;if&nbsp;a&nbsp;file&nbsp;was&nbsp;submitted&nbsp;***/<br></span><span style="color: #007700">if(!isset(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_ctgy'</span><span style="color: #007700">]))<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Please&nbsp;select&nbsp;a&nbsp;file&lt;/p&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>else<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">upload</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;give&nbsp;praise&nbsp;and&nbsp;thanks&nbsp;to&nbsp;the&nbsp;php&nbsp;gods&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Thank&nbsp;you&nbsp;for&nbsp;submitting&lt;/p&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">PDOException&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;h4&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">().</span><span style="color: #DD0000">'&lt;/h4&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;h4&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">().</span><span style="color: #DD0000">'&lt;/h4&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br><br></span><span style="color: #FF8000">/**<br>&nbsp;*<br>&nbsp;*&nbsp;the&nbsp;upload&nbsp;function<br>&nbsp;*&nbsp;<br>&nbsp;*&nbsp;@access&nbsp;public<br>&nbsp;*<br>&nbsp;*&nbsp;@return&nbsp;void<br>&nbsp;*<br>&nbsp;*/<br></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">upload</span><span style="color: #007700">(){<br></span><span style="color: #FF8000">/***&nbsp;check&nbsp;if&nbsp;a&nbsp;file&nbsp;was&nbsp;uploaded&nbsp;***/<br></span><span style="color: #007700">if(</span><span style="color: #0000BB">is_uploaded_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">])&nbsp;!=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;an&nbsp;array&nbsp;of&nbsp;allowed&nbsp;categories&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cat_array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"animals"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"vegetables"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"minerals"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">filter_has_var</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_POST</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"notset"</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_ctgy'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$cat_array</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_ctgy&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_POST</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_ctgy"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_SANITIZE_STRING</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Invalid&nbsp;Category"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;&nbsp;get&nbsp;the&nbsp;image&nbsp;info.&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;assign&nbsp;our&nbsp;variables&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_type&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #DD0000">'mime'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imgfp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'rb'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_width&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_height&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_size&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_name&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$maxsize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">99999999</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;&nbsp;check&nbsp;the&nbsp;file&nbsp;is&nbsp;less&nbsp;than&nbsp;the&nbsp;maximum&nbsp;file&nbsp;size&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'size'</span><span style="color: #007700">]&nbsp;&lt;&nbsp;</span><span style="color: #0000BB">$maxsize&nbsp;</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;create&nbsp;a&nbsp;second&nbsp;variable&nbsp;for&nbsp;the&nbsp;thumbnail&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$thumb_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;get&nbsp;the&nbsp;aspect&nbsp;ratio&nbsp;(height&nbsp;/&nbsp;width)&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$aspectRatio</span><span style="color: #007700">=(float)(</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;thumbnail&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$thumb_height&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;the&nbsp;thumb&nbsp;width&nbsp;is&nbsp;the&nbsp;thumb&nbsp;height/aspectratio&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$thumb_width&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$thumb_height&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">$aspectRatio</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;&nbsp;get&nbsp;the&nbsp;image&nbsp;source&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$src&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ImageCreateFromjpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$thumb_data</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;create&nbsp;the&nbsp;destination&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$destImage&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ImageCreateTrueColor</span><span style="color: #007700">(</span><span style="color: #0000BB">$thumb_width</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$thumb_height</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;copy&nbsp;and&nbsp;resize&nbsp;the&nbsp;src&nbsp;image&nbsp;to&nbsp;the&nbsp;dest&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ImageCopyResampled</span><span style="color: #007700">(</span><span style="color: #0000BB">$destImage</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$src</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$thumb_width</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$thumb_height</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;start&nbsp;output&nbsp;buffering&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ob_start</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;&nbsp;export&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">imageJPEG</span><span style="color: #007700">(</span><span style="color: #0000BB">$destImage</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;stick&nbsp;the&nbsp;image&nbsp;content&nbsp;in&nbsp;a&nbsp;variable&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_thumb&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ob_get_contents</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;clean&nbsp;up&nbsp;a&nbsp;little&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ob_end_clean</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;connect&nbsp;to&nbsp;db&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysql:host=localhost;dbname=testblob"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;error&nbsp;mode&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;prepare&nbsp;the&nbsp;sql&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;testblob&nbsp;(image_type&nbsp;,image,&nbsp;image_height,&nbsp;image_width,&nbsp;image_thumb,&nbsp;thumb_height,&nbsp;thumb_width,&nbsp;image_ctgy,&nbsp;image_name)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUES&nbsp;(?&nbsp;,?,&nbsp;?,&nbsp;?,&nbsp;?,&nbsp;?,&nbsp;?,&nbsp;?,&nbsp;?)"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$image_type</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$imgfp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_LOB</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$image_height</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$image_width</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$image_thumb</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_LOB</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">6</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$thumb_height</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">7</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$thumb_width</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">8</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$image_ctgy</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">9</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$image_name</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;execute&nbsp;the&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;throw&nbsp;an&nbsp;exception&nbsp;is&nbsp;image&nbsp;is&nbsp;not&nbsp;of&nbsp;type&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"File&nbsp;Size&nbsp;Error"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>else<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;file&nbsp;is&nbsp;not&nbsp;less&nbsp;than&nbsp;the&nbsp;maximum&nbsp;allowed,&nbsp;print&nbsp;an&nbsp;error<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Unsupported&nbsp;Image&nbsp;Format!"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br></span><span style="color: #0000BB">?&gt;<br></span><br>&lt;/body&gt;<br>&lt;/html&gt;<br></span>
+</code></div>
+<p>
+By following the comments in the above script you can get a feel for what is happening with the output buffering. Before the image is exported, we begin buffering and then assign the thumbnail contents. When the buffer is cleaned, all memory of the buffer is erased. To retrieve the thumbnails we simply create a variation of the first script we used to fetch a single image from the database. This time however when we view the images, we will loop through and array of image ID's and have the showfiles.php file show each thumbnail. A little CSS to make it tidy will complete the task. Here we show the view.php file that is now prepared for thumbnails.
+</p>
+<div class="codebox">
+<code><span style="color: #000000">
+<br>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Strict//EN"&nbsp;"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;<br>&lt;html&nbsp;xmlns="http://www.w3.org/1999/xhtml"&nbsp;lang="en"&nbsp;xml:lang="en"&gt;<br>&lt;head&gt;<br>&lt;title&gt;Introduction&nbsp;to&nbsp;SPL&lt;/title&gt;<br>&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;href="./tutorial.css"&nbsp;/&gt;<br>&lt;style&nbsp;type="text/css"&gt;<br>div.thumb&nbsp;{<br>&nbsp;&nbsp;float:&nbsp;left;<br>&nbsp;&nbsp;width:&nbsp;25%;<br>&nbsp;&nbsp;border:&nbsp;thin&nbsp;silver&nbsp;solid;<br>&nbsp;&nbsp;margin:&nbsp;0.5em;<br>&nbsp;&nbsp;padding:&nbsp;0.5em;<br>}<br>div.thumb&nbsp;p&nbsp;{<br>&nbsp;&nbsp;text-align:&nbsp;center;<br>&nbsp;&nbsp;font-style:&nbsp;italic;<br>&nbsp;&nbsp;font-size:&nbsp;smaller;<br>&nbsp;&nbsp;text-indent:&nbsp;0;<br>}<br>&lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;h2&gt;Thumbnails&lt;/h2&gt;<br>&lt;p&gt;By&nbsp;Kevin&nbsp;Waterson&lt;/p&gt;<br><br><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/***&nbsp;Check&nbsp;the&nbsp;$_GET&nbsp;variable&nbsp;***/<br>&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">try&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;connect&nbsp;to&nbsp;the&nbsp;database&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysql:host=localhost;dbname=testblob"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;PDO&nbsp;error&nbsp;mode&nbsp;to&nbsp;exception&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;The&nbsp;sql&nbsp;statement&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;image_id,&nbsp;thumb_height,&nbsp;thumb_width,&nbsp;image_type,&nbsp;image_name&nbsp;FROM&nbsp;testblob"</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;prepare&nbsp;the&nbsp;sql&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;exceute&nbsp;the&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;fetch&nbsp;mode&nbsp;to&nbsp;associative&nbsp;array&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFetchMode</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">FETCH_ASSOC</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;header&nbsp;for&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">foreach(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetchAll</span><span style="color: #007700">()&nbsp;as&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;div&nbsp;class="thumb"&nbsp;style="width:&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'thumb_width'</span><span style="color: #007700">].</span><span style="color: #DD0000">'px;&nbsp;height:&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'thumb_height'</span><span style="color: #007700">].</span><span style="color: #DD0000">'px;"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a&nbsp;href="showfile.php?image_id='</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_id'</span><span style="color: #007700">].</span><span style="color: #DD0000">'"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src="showthumbs.php?image_id='</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_id'</span><span style="color: #007700">].</span><span style="color: #DD0000">'"&nbsp;alt="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_name'</span><span style="color: #007700">].</span><span style="color: #DD0000">'&nbsp;/"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;&lt;/p&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_name'</span><span style="color: #007700">].</span><span style="color: #DD0000">'&lt;/p&gt;&lt;/div&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">PDOException&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br></span><span style="color: #0000BB">?&gt;<br></span><br>&lt;/body&gt;<br>&lt;/html&gt;<br></span>
+</code></div>
+<p>
+You can see in the script above where we have looped over the image_id's from the database and called the file showthumbs.php and have linked this to the original showfile.php file so when a thumbnail is clicked, it will load the fullsized image. The showthumbs.php script is very similar to the showfile.php script with only a change to the database SELECT to fetch the image_thumb field rather than the image field. The showthumbs.php script is shown below.
+</p><div class="codebox">
+<code><span style="color: #000000">
+<br><span style="color: #0000BB">&lt;?php<br><br></span><span style="color: #FF8000">/***&nbsp;some&nbsp;basic&nbsp;sanity&nbsp;checks&nbsp;***/<br></span><span style="color: #007700">if(</span><span style="color: #0000BB">filter_has_var</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_id"</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'image_id'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_VALIDATE_INT</span><span style="color: #007700">)&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;assign&nbsp;the&nbsp;image&nbsp;id&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$image_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">filter_input</span><span style="color: #007700">(</span><span style="color: #0000BB">INPUT_GET</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"image_id"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILTER_SANITIZE_NUMBER_INT</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;connect&nbsp;to&nbsp;the&nbsp;database&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysql:host=localhost;dbname=testblob"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;PDO&nbsp;error&nbsp;mode&nbsp;to&nbsp;exception&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_ERRMODE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ERRMODE_EXCEPTION</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;The&nbsp;sql&nbsp;statement&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;image_thumb,&nbsp;image_type&nbsp;FROM&nbsp;testblob&nbsp;WHERE&nbsp;image_id=</span><span style="color: #0000BB">$image_id</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;prepare&nbsp;the&nbsp;sql&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;exceute&nbsp;the&nbsp;query&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;fetch&nbsp;mode&nbsp;to&nbsp;associative&nbsp;array&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFetchMode</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">FETCH_ASSOC</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;header&nbsp;for&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;check&nbsp;we&nbsp;have&nbsp;a&nbsp;single&nbsp;image&nbsp;and&nbsp;type&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">sizeof</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;set&nbsp;the&nbsp;headers&nbsp;and&nbsp;display&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_type'</span><span style="color: #007700">]);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/***&nbsp;output&nbsp;the&nbsp;image&nbsp;***/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'image_thumb'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Out&nbsp;of&nbsp;bounds&nbsp;Error"</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">PDOException&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>else<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Please&nbsp;use&nbsp;a&nbsp;real&nbsp;id&nbsp;number'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br></span><span style="color: #0000BB">?&gt;<br></span>
+</span>
+</code></div>
+
+<a name="10"><h2>Another Appoach</h2></a>
+<p>
+Till now, the above methods have not included any database normalization. Here we will re-design the database so that the images are stored in a seperate table with a foreign key index. Our database structure will now look like this:
+</p>
+<div class="codebox">
+
+</div>
+
+<p>
+With the above scripts you will be able to store and retrieve you images, in MySQL database. If you have any further questions about what you see here, please contact us via the <a href="http://www.phpro.org/contact/">contact page</a>.<br>
+Enjoy!
+</p>
+<!--
+										<div class="post-block post-share">
+											<h3><i class="icon icon-share"></i>Share this post</h3>
+
+											<div class="addthis_toolbox addthis_default_style ">
+												<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+												<a class="addthis_button_tweet"></a>
+												<a class="addthis_button_pinterest_pinit"></a>
+												<a class="addthis_counter addthis_pill_style"></a>
+											</div>
+											<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+
+										</div>
+
+										<div class="post-block post-author clearfix">
+											<h3><i class="icon icon-user"></i>Author</h3>
+											<div class="img-thumbnail">
+												<a href="blog-single.html">
+													<img src="/assets/img/avatar.jpg" alt="">
+												</a>
+											</div>
+											<p><strong class="name"><a href="#">John Doe</a></strong></p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui. </p>
+										</div>
+
+										<div class="post-block post-comments clearfix">
+											<h3><i class="icon icon-comments"></i>Comments (3)</h3>
+
+											<ul class="comments">
+												<li>
+													<div class="comment">
+														<div class="img-thumbnail">
+															<img class="avatar" alt="" src="/assets/img/avatar-2.jpg">
+														</div>
+														<div class="comment-block">
+															<div class="comment-arrow"></div>
+															<span class="comment-by">
+																<strong>John Doe</strong>
+																<span class="pull-right">
+																	<span> <a href="#"><i class="icon icon-reply"></i> Reply</a></span>
+																</span>
+															</span>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.</p>
+															<span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+														</div>
+													</div>
+
+													<ul class="comments reply">
+														<li>
+															<div class="comment">
+																<div class="img-thumbnail">
+																	<img class="avatar" alt="" src="/assets/img/avatar-3.jpg">
+																</div>
+																<div class="comment-block">
+																	<div class="comment-arrow"></div>
+																	<span class="comment-by">
+																		<strong>John Doe</strong>
+																		<span class="pull-right">
+																			<span> <a href="#"><i class="icon icon-reply"></i> Reply</a></span>
+																		</span>
+																	</span>
+																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
+																	<span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="comment">
+																<div class="img-thumbnail">
+																	<img class="avatar" alt="" src="/assets/img/avatar-4.jpg">
+																</div>
+																<div class="comment-block">
+																	<div class="comment-arrow"></div>
+																	<span class="comment-by">
+																		<strong>John Doe</strong>
+																		<span class="pull-right">
+																			<span> <a href="#"><i class="icon icon-reply"></i> Reply</a></span>
+																		</span>
+																	</span>
+																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
+																	<span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div class="comment">
+														<div class="img-thumbnail">
+															<img class="avatar" alt="" src="/assets/img/avatar.jpg">
+														</div>
+														<div class="comment-block">
+															<div class="comment-arrow"></div>
+															<span class="comment-by">
+																<strong>John Doe</strong>
+																<span class="pull-right">
+																	<span> <a href="#"><i class="icon icon-reply"></i> Reply</a></span>
+																</span>
+															</span>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+															<span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="comment">
+														<div class="img-thumbnail">
+															<img class="avatar" alt="" src="/assets/img/avatar.jpg">
+														</div>
+														<div class="comment-block">
+															<div class="comment-arrow"></div>
+															<span class="comment-by">
+																<strong>John Doe</strong>
+																<span class="pull-right">
+																	<span> <a href="#"><i class="icon icon-reply"></i> Reply</a></span>
+																</span>
+															</span>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+															<span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+
+										</div>
+
+										<div class="post-block post-leave-comment">
+											<h3>Leave a comment</h3>
+
+											<form action="" type="post">
+												<div class="row">
+													<div class="form-group">
+														<div class="col-md-6">
+															<label>Your name *</label>
+															<input type="text" value="" maxlength="100" class="form-control" name="name" id="name">
+														</div>
+														<div class="col-md-6">
+															<label>Your email address *</label>
+															<input type="email" value="" maxlength="100" class="form-control" name="email" id="email">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="form-group">
+														<div class="col-md-12">
+															<label>Comment *</label>
+															<textarea maxlength="5000" rows="10" class="form-control" name="comment" id="comment"></textarea>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<input type="submit" value="Post Comment" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+													</div>
+												</div>
+											</form>
+										</div>
+-->
+									</div>
+								</article>
+
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<aside class="sidebar">
+
+<form>
+<div class="input-group">
+<input class="form-control" placeholder="Search..." name="s" id="s" type="text">
+<span class="input-group-btn">
+<button type="submit" class="btn btn-primary btn-lg"><i class="icon icon-search"></i></button>
+</span>
+</div>
+</form>
+
+<hr>
+
+<script async="" src="./Storing Images in MySQL with PHP_files/adsbygoogle.js"></script>
+<!-- Right Menu Top -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-1399602330070151" data-ad-slot="8910597257" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:262px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:262px;background-color:transparent"><iframe width="262" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h4>Categories</h4>
+<ul class="nav nav-list primary push-bottom">
+<li><a href="http://www.phpro.org/quiz">Testing</a></li>
+<li><a href="http://www.phpro.org/services">Services</a></li>
+<li><a href="http://www.phpro.org/tutorials">Tutorials</a></li>
+<li><a href="http://www.phpro.org/articles">Articles</a></li>
+<li><a href="http://www.phpro.org/examples">Examples</a></li>
+<li><a href="http://www.phpro.org/classes">Classes</a></li>
+<li><a href="http://www.phpro.org/contact">Contact</a></li>
+</ul>
+
+<div class="tabs">
+<ul class="nav nav-tabs">
+<li class="active"><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#popularPosts" data-toggle="tab"><i class="icon icon-star"></i> Popular</a></li>
+<li><a href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#recentPosts" data-toggle="tab">Recent</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="popularPosts">
+<ul class="simple-post-list">
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-1.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/SPL-Autoload.html">SPL Autoload</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-1.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/Easter-Egg.html">Easter Egg</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-1.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/Simple-Mysql-PHP-Menu.html">Simple Mysql PHP Menu</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-1.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/Simple-Mysql-PHP-Menu.html">Simple Mysql PHP Menu</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-1.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/Xajax-In-An-Object-Oriented-Environment.html">Xajax-In An Object Oriented Environment</a>
+<div class="post-meta">
+09 Sep, 2014</div>
+</div>
+</li>
+
+</ul>
+
+
+</div>
+<div class="tab-pane" id="recentPosts">
+<ul class="simple-post-list">
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-2.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/blog-single.html">Setting And Getting Environment Variables PHP</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-2.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/blog-single.html">PBKDF2 With PHP</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-2.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/blog-single.html">Get Enum Values Into Array With PHP</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-2.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/blog-single.html">Generate GUID UUID With PHP</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+<li>
+<div class="post-image">
+<div class="img-thumbnail">
+<a href="http://www.phpro.org/tutorials/blog-single.html">
+<img src="./Storing Images in MySQL with PHP_files/blog-thumb-2.jpg" alt="">
+</a>
+</div>
+</div>
+<div class="post-info">
+<a href="http://www.phpro.org/tutorials/blog-single.html">Convert Liters Per 100 Kilometers To Miles Per Gallon With PHP</a>
+<div class="post-meta">
+22 Sep, 2015</div>
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+
+<hr>
+
+<h4>About Us</h4>
+<p>
+Providing the best and most up to date tutorials and examples on the web. Our candidate testing service provides the best method of screen candidates to be assured of securing the right resource for your business.
+</p>
+
+</aside>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribon">
+							<span>Get in Touch</span>
+						</div>
+						<div class="col-md-3">
+							<div class="newsletter">
+								<h4>Newsletter</h4>
+								<p>Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.</p>
+
+								<div class="alert alert-success hidden" id="newsletterSuccess">
+									<strong>Success!</strong> You've been added to our email list.
+								</div>
+
+								<div class="alert alert-danger hidden" id="newsletterError"></div>
+
+								<form id="newsletterForm" action="http://www.phpro.org/tutorials/php/newsletter-subscribe.php" method="post" novalidate="novalidate">
+									<div class="input-group">
+										<input class="form-control" placeholder="Email Address" name="email" id="email" type="text">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit">Go!</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<h4>Latest Tweet</h4>
+							<div id="tweet" class="twitter" data-account-id=""></div>
+						</div>
+						<div class="col-md-4">
+							<div class="contact-details">
+								<h4>Contact Us</h4>
+								<ul class="contact">
+									<li><p><i class="icon icon-map-marker"></i> <strong>Address:</strong> 2 Funny St, Narrabeen, Australia</p></li>
+									<li><p><i class="icon icon-phone"></i> <strong>Phone:</strong> Private</p></li>
+									<li><p><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:sales@phpro.org">sales@phpro.org</a></p></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<h4>Follow Us</h4>
+							<div class="social-icons">
+								<ul class="social-icons">
+									<li class="facebook"><a href="http://www.facebook.com/" target="_blank" data-placement="bottom" title="Facebook">Facebook</a></li>
+									<li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" title="Twitter">Twitter</a></li>
+									<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" title="Linkedin">Linkedin</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1">
+								<a href="http://www.phpro.org/tutorials/index.html" class="logo">
+								<img alt="PHPRO.ORG" class="img-responsive" src="./Storing Images in MySQL with PHP_files/logo.png">
+								</a>
+							</div>
+							<div class="col-md-7">
+								<p>
+								I would rather see a sermon than hear one any day. I'd rather have you walk with me, than merely point the way. The eye is a more ready pupil than ever was the ear, good advice is often confusing, but example is always clear.
+								</p>
+								<p>© Copyright 2014. All Rights Reserved.</p>
+							</div>
+							<div class="col-md-4">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="http://www.phpro.org/about">FAQ's</a></li>
+										<li><a href="http://www.phpro.org/tutorials/sitemap.html">Sitemap</a></li>
+										<li><a href="http://www.phpro.org/contact">Contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+	<!--	</div> -->
+
+		<!-- Libs -->
+		<script src="./Storing Images in MySQL with PHP_files/jquery-2.0.1.min.js"></script>
+		<!-- <script src="/assets/vendor/jquery.js"></script> -->
+		<script src="./Storing Images in MySQL with PHP_files/plugins.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.easing.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.appear.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.cookie.js"></script>
+		
+		<script src="./Storing Images in MySQL with PHP_files/bootstrap.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/twitter.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.themepunch.plugins.min.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.themepunch.revolution.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/owl.carousel.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.flipshow.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/magnific-popup.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.validate.js"></script>
+
+		<!-- Current Page Scripts -->
+		<script src="./Storing Images in MySQL with PHP_files/view.home.js"></script>
+
+		<!-- Theme Initializer -->
+		<script src="./Storing Images in MySQL with PHP_files/theme.js"></script>
+
+		<!-- Custom JS -->
+		<script src="./Storing Images in MySQL with PHP_files/custom.js"></script>
+
+		<script src="./Storing Images in MySQL with PHP_files/js"></script><script src="./Storing Images in MySQL with PHP_files/main.js"></script>
+	       <script src="./Storing Images in MySQL with PHP_files/jquery.gmap.js"></script>
+		<script src="./Storing Images in MySQL with PHP_files/jquery.dataTables.min.js"></script>
+		 <script src="./Storing Images in MySQL with PHP_files/dataTables.bootstrap.js"></script>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3491171-1');
+  ga('require', 'linkid', 'linkid.js')
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+</div><a class="scroll-to-top visible" href="http://www.phpro.org/tutorials/Storing-Images-in-MySQL-with-PHP.html#" id="scrollToTop"><i class="icon icon-chevron-up icon-white"></i></a></body></html>

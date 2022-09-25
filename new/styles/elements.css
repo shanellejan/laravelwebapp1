@@ -1,0 +1,52 @@
+h3,p,label {
+text-align:center;
+font-family:'Raleway',sans-serif;
+color:#006400
+}
+h2 {
+font-family:'Raleway',sans-serif
+}
+input {
+width:100%;
+margin-bottom:20px;
+padding:5px;
+height:30px;
+box-shadow:0px 0px 0px white;
+border-radius:3px;
+border:none
+}
+textarea {
+width:100%;
+margin-bottom:20px;
+padding:5px;
+height:80px;
+box-shadow:0px 0px 0px white;
+border-radius:3px;
+border:none
+}
+#send {
+width:103%;
+height:45px;
+margin-top:40px;
+border-radius:3px;
+background-color:#ff9999;
+border:1px solid white;
+color:#fff;
+font-family:'Raleway',sans-serif;
+font-size:18px
+}
+div#feedback {
+text-align:center;
+height:350px;
+width:330px;
+background-color:;
+border-radius:3px;
+font-family:'Raleway',sans-serif;
+margin-left:140px;
+margin-top:-18px
+}
+.container {
+width:960px;
+margin:40px auto;
+
+}

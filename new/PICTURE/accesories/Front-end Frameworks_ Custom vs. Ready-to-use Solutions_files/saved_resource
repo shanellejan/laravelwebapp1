@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en" ><!--<![endif]-->
+  <head>
+    <link href="//dab1nmslvvntp.cloudfront.net" ref="dns-prefetch">
+    <link href="//d2sis3lil8ndrq.cloudfront.net" ref="dns-prefetch">
+    <link href="//sitepoint.com" ref="dns-prefetch">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" content="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/images/icon.html-css.png">
+        
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="apple-touch-icon-precomposed" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link href="https://plus.google.com/+sitepoint" rel="publisher" />
+        <meta property="twitter:account_id" content="15743570" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <script type="text/javascript">
+    function r(f){/in/.test(document.readyState)?setTimeout(r,9,f):f()}
+    </script>
+
+    
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-30131-1', '.sitepoint.com');
+
+  ga('set', 'dimension1', 'post');
+ga('set', 'dimension2', 'htmlcss');
+ga('set', 'dimension3', 'HTML &amp; CSS');
+ga('set', 'dimension4', '2014-11-04');
+ga('set', 'dimension5', 'Ivaylo Gerchev');
+
+  ga('set', 'contentGroup5', 'htmlcss');  //Integration with Kaizen
+  try { kzs("activateUniversalAnalytics"); } catch(e) {}
+
+  // Cross Domain Tracking to Learnable
+  ga('require', 'linker');
+  // command, domains, useAnchor, enableForms
+  ga('linker:autoLink', ['learnable.com'], false, true);
+
+  ga('send', 'pageview');
+</script>
+    <script type="text/javascript">
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+      (function() {
+      var gads = document.createElement('script');
+      gads.async = true;
+      gads.type = 'text/javascript';
+      var useSSL = 'https:' == document.location.protocol;
+      gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(gads, node);
+      })();
+    </script>
+    <script data-kz-key="b421ba44cb0c0e6e" data-kz-namespace="kzs" src="//cdn.kaizenplatform.net/s/b4/21ba44cb0c0e6e.js"></script>
+    <!-- RocketFuel Code for SitePoint -->
+    <script src="http://ads.yahoo.com/pixel?id=2557776&t=1" type="text/javascript"></script>
+    <!-- End of RocketFuel Code -->
+    
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Front-end Frameworks: Custom vs. Ready-to-use Solutions</title>
+<meta name="description" content="Ivaylo Gerchev looks at the pros and cons of choosing between a prebuilt framework vs. a custom solution."/>
+<link rel="canonical" href="http://www.sitepoint.com/front-end-frameworks-custom-vs-ready-use-solutions/" />
+<link rel="publisher" href="https://plus.google.com/+sitepoint/"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Front-end Frameworks: Custom vs. Ready-to-use Solutions" />
+<meta property="og:description" content="Ivaylo Gerchev looks at the pros and cons of choosing between a prebuilt framework vs. a custom solution." />
+<meta property="og:url" content="http://www.sitepoint.com/front-end-frameworks-custom-vs-ready-use-solutions/" />
+<meta property="og:site_name" content="SitePoint" />
+<meta property="article:publisher" content="https://www.facebook.com/sitepoint" />
+<meta property="article:tag" content="bootstrap" />
+<meta property="article:tag" content="custom framework" />
+<meta property="article:tag" content="frontend framework" />
+<meta property="article:tag" content="LouisL" />
+<meta property="article:section" content="Bootstrap" />
+<meta property="article:published_time" content="2014-11-04T11:00:03+00:00" />
+<meta property="article:modified_time" content="2014-11-04T00:46:28+00:00" />
+<meta property="og:updated_time" content="2014-11-04T00:46:28+00:00" />
+<meta property="fb:admins" content="121300382" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="Ivaylo Gerchev looks at the pros and cons of choosing between a prebuilt framework vs. a custom solution."/>
+<meta name="twitter:title" content="Front-end Frameworks: Custom vs. Ready-to-use Solutions"/>
+<meta name="twitter:site" content="@sitepointdotcom"/>
+<meta name="twitter:domain" content="SitePoint"/>
+<meta name="twitter:creator" content="@sitepointdotcom"/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="SitePoint &raquo; Front-end Frameworks: Custom vs. Ready-to-use Solutions Comments Feed" href="http://www.sitepoint.com/front-end-frameworks-custom-vs-ready-use-solutions/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.sitepoint.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.2"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-postratings-css'  href='http://www.sitepoint.com/wp-content/plugins/wp-postratings/postratings-css.css?ver=1.82' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-styles-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/stylesheets/styles-ce3022536697a45432b3fc58c9b86615.css?ver=4.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='scroll-triggered-boxes-css'  href='http://www.sitepoint.com/wp-content/plugins/scroll-triggered-boxes/assets/css/styles.min.css?ver=2.0.2' type='text/css' media='all' />
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-head-e4a2be27db699092d2993e42901cedf6.js?ver=4.2.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.sitepoint.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.sitepoint.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.2.2" />
+<link rel='shortlink' href='http://www.sitepoint.com/?p=93934' />
+<!-- BEGIN wp-parsely Plugin Version 1.7 -->
+<meta name='wp-parsely_version' id='wp-parsely_version' content='1.7' />
+   <script type="application/ld+json">
+   {"@context":"http:\/\/schema.org","@type":"NewsArticle","headline":"Front-end Frameworks: Custom vs. Ready-to-use Solutions","url":"http:\/\/www.sitepoint.com\/front-end-frameworks-custom-vs-ready-use-solutions\/","thumbnailUrl":"","articleId":"93934","dateCreated":"2014-11-04T19:00:03Z","articleSection":"HTML &amp; CSS","creator":["Ivaylo Gerchev"],"keywords":["bootstrap","custom framework","frontend framework","louisl"]}   </script>
+<!-- END wp-parsely Plugin Version 1.7 -->
+    <script type="text/javascript">
+      googletag.cmd.push(function() {
+        		googletag.defineSlot("/7448792/SP2013_Articles_300x250_1", [300,250], "div-gpt-ad-1392428092543-0").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP2013_Articles_728x90_1", [728,90], "div-gpt-ad-article-header").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP2013_Articles_300x600_1", [[300, 600], [300, 250], [160, 600]], "div-gpt-ad-1392428092543-4").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Articles_200x125_1", [200,125], "div-gpt-ad-1436815711585-0").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Articles_200x125_2", [200,125], "div-gpt-ad-1436815711585-1").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Articles_200x125_3", [200,125], "div-gpt-ad-1436815711585-2").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Articles_200x125_4", [200,125], "div-gpt-ad-1436815711585-3").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Articles_728x90_Bottom", [728,90], "div-gpt-ad-1438136496246-0").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Deals_728x90", [728,90], "div-gpt-ad-div-gpt-ad-1441228258214-0").addService(googletag.pubads());
+		googletag.defineSlot("/7448792/SP_Deals_300x250", [300,250], "div-gpt-ad-div-gpt-ad-1441228258214-1").addService(googletag.pubads());
+		googletag.pubads().setTargeting("channel", "htmlcss");
+		googletag.pubads().setTargeting("post_id", "93934");
+		googletag.pubads().setTargeting("OpenX",["true", "false"]);
+		googletag.pubads().setTargeting("Tribal",["true", "false"]);
+		googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+    });
+    </script>
+<style type="text/css">
+/* Custom Styles for Box 111076 */
+.stb-111076 {
+background: #1e73be !important;
+color: #ffffff !important;
+border-color: #e2e2e2 !important;
+border-width: 4px !important;
+border-style: solid !important;
+max-width: 400px;
+@media ( max-width: 400px ) { #stb-111076 { display: none !important; } }
+}
+
+.myButton {
+	background-color:#ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+ moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 2px solid #e2e2e2;
+
+	font-weight:bold;
+	padding:12px 28px;
+	text-decoration:none;
+	
+}
+.myButton:hover {
+	background-color:#eaeaea;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.logo {
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: 10px solid #ffffff;
+}</style>
+
+    <!--[if lt IE 9]>
+      <script src="/wp-content/themes/sitepoint/assets/javascripts/vendor/respond.custom.min.js"></script>
+    <![endif]-->
+    <style>
+  .t-color { color: #EF8D24 }
+  a.t-color:hover,
+  button.t-color:hover { color: #fb8d17 }
+
+  .t-bg { background-color: #EF8D24 }
+  a.t-bg:hover,
+  button.t-bg:hover { background-color: #fb8d17}
+
+  .t-border { border-color: #EF8D24 }
+  a.t-border:hover,
+  button.t-border:hover { border-color: #fb8d17 }
+
+  .t-bg-tint { background-color: #FDE2C4 }
+  .t-bg-dark { background-color: #fb8d17 }
+  .t-border-tint { border-color: #FDE2C4 }
+
+  .t-fill path, .t-fill ellipse, .t-fill rect { fill: #EF8D24; }
+
+  .t-list li:before { background-color: #EF8D24; }
+  .t-p-teal-color { color: #1a9b9e }
+  a.t-p-teal-color:hover,
+  button.t-p-teal-color:hover { color: #018285 }
+
+  .t-p-teal-bg { background-color: #1a9b9e }
+  a.t-p-teal-bg:hover,
+  button.t-p-teal-bg:hover { background-color: #018285}
+
+  .t-p-teal-border { border-color: #1a9b9e }
+  a.t-p-teal-border:hover,
+  button.t-p-teal-border:hover { border-color: #018285 }
+
+  .t-p-teal-bg-tint { background-color: #5EB9BB }
+  .t-p-teal-bg-dark { background-color: #018285 }
+  .t-p-teal-border-tint { border-color: #5EB9BB }
+
+  .t-p-teal-fill path, .t-p-teal-fill ellipse, .t-p-teal-fill rect { fill: #1a9b9e; }
+
+  .t-p-teal-list li:before { background-color: #1a9b9e; }
+
+  .t-p-watermelon-color { color: #FF8480 }
+  a.t-p-watermelon-color:hover,
+  button.t-p-watermelon-color:hover { color: #E66B67 }
+
+  .t-p-watermelon-bg { background-color: #FF8480 }
+  a.t-p-watermelon-bg:hover,
+  button.t-p-watermelon-bg:hover { background-color: #E66B67}
+
+  .t-p-watermelon-border { border-color: #FF8480 }
+  a.t-p-watermelon-border:hover,
+  button.t-p-watermelon-border:hover { border-color: #E66B67 }
+
+  .t-p-watermelon-bg-tint { background-color: #FFA9A6 }
+  .t-p-watermelon-bg-dark { background-color: #E66B67 }
+  .t-p-watermelon-border-tint { border-color: #FFA9A6 }
+
+  .t-p-watermelon-fill path, .t-p-watermelon-fill ellipse, .t-p-watermelon-fill rect { fill: #FF8480; }
+
+  .t-p-watermelon-list li:before { background-color: #FF8480; }
+
+  .t-p-pop-bg { background-color: #1a9b9e }
+  a.t-p-pop-bg:hover,
+  button.t-p-pop-bg:hover { background-color: #018285}
+</style>
+    <script>
+  try {
+    var kzs = window.kzs || function() { var _ = window.kzs; return (_.q || (_.q = [])).push(arguments); };
+    kzs("setCustomVariable", "pageType", "article");
+  } catch(e) {}
+</script>
+    <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"3/2Rk1ao6C526C", domain:"sitepoint.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=3/2Rk1ao6C526C" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+  </head>
+
+  <body>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PFTWN4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PFTWN4');</script>
+    <!-- End Google Tag Manager -->
+
+    <header class="main-header" role="banner">
+      <nav uni-nav="small">
+        <section uni-nav-section="left">
+          <a uni-nav-item="logo" href="/">
+            <svg class="sp-logo" viewBox="0 0 136 27">
+  <g fill-rule="evenodd">
+    <g id="sitepoint" class="logo-text"><path d="M30.213 16.645c.234.37.538.664.915.884.38.22.807.376 1.282.467.473.096.963.143 1.468.143.388 0 .796-.027 1.22-.084.43-.06.82-.162 1.18-.313.36-.152.655-.375.887-.67.233-.293.35-.667.35-1.124 0-.628-.244-1.102-.727-1.426-.485-.322-1.092-.582-1.82-.783-.726-.197-1.518-.38-2.37-.54-.853-.16-1.644-.39-2.37-.682-.727-.296-1.335-.708-1.82-1.24-.483-.53-.726-1.27-.726-2.22 0-.74.17-1.377.508-1.907.34-.53.777-.962 1.31-1.295.532-.332 1.134-.58 1.803-.74.67-.162 1.335-.244 1.994-.244.852 0 1.638.073 2.356.216.716.14 1.354.39 1.906.74.55.35.992.826 1.323 1.425.33.597.524 1.345.58 2.235h-2.47c-.042-.473-.167-.87-.38-1.18-.214-.315-.484-.566-.815-.758-.33-.186-.694-.327-1.09-.41-.4-.088-.802-.13-1.208-.13-.37 0-.742.03-1.12.085-.378.06-.724.16-1.032.3-.313.142-.563.332-.758.57-.193.237-.29.545-.29.925 0 .417.15.764.45 1.04.3.275.684.503 1.147.683.47.18.992.332 1.573.454.584.125 1.166.253 1.746.386.62.132 1.226.294 1.82.484.59.19 1.114.44 1.57.755.456.31.824.708 1.104 1.18.283.475.422 1.065.422 1.767 0 .89-.19 1.63-.567 2.22-.378.588-.873 1.065-1.483 1.423-.61.36-1.3.613-2.066.754-.766.143-1.527.213-2.283.213-.834 0-1.63-.084-2.385-.255-.758-.17-1.426-.45-2.007-.84-.582-.388-1.048-.9-1.396-1.537-.35-.637-.543-1.41-.584-2.32h2.476c.018.53.144.982.377 1.35" id="Path"/><path d="M45.69 2.208c0 .782-.646 1.414-1.44 1.414-.796 0-1.44-.632-1.44-1.414 0-.776.644-1.407 1.44-1.407.794 0 1.44.632 1.44 1.408zm-2.676 3.005h2.47v14.724h-2.47V5.213z" id="Path"/><path d="M55.673 5.213V7.35h-2.996v9.14c0 .284.023.512.072.683.047.17.14.306.276.4.136.094.325.156.567.184.242.027.556.043.945.043h1.135v2.137h-1.89c-.64 0-1.188-.044-1.645-.13-.456-.085-.824-.242-1.106-.468-.28-.23-.49-.554-.626-.97-.134-.417-.204-.97-.204-1.652V7.35h-2.557V5.214h2.557V.8h2.475v4.413h2.996" id="Fill-21"/><path d="M69.137 18.995c-1.124.836-2.542 1.252-4.247 1.252-1.204 0-2.245-.188-3.128-.568-.882-.38-1.625-.913-2.225-1.596-.602-.683-1.052-1.498-1.354-2.447-.3-.95-.47-1.985-.508-3.105 0-1.118.174-2.144.524-3.075.347-.932.836-1.738 1.47-2.42.63-.683 1.374-1.216 2.238-1.596.863-.377 1.808-.57 2.837-.57 1.337 0 2.447.273 3.33.812.883.542 1.59 1.23 2.123 2.065.533.836.902 1.748 1.107 2.734.203.99.286 1.93.248 2.82h-11.26c-.02.646.057 1.26.234 1.837.173.58.454 1.093.842 1.537.388.45.882.805 1.483 1.07.6.264 1.31.396 2.124.396 1.047 0 1.906-.234 2.573-.713.67-.47 1.112-1.193 1.325-2.16h2.443c-.33 1.65-1.057 2.893-2.18 3.728zm-.597-9.453c-.22-.512-.522-.953-.902-1.324-.378-.37-.824-.665-1.338-.882-.514-.218-1.08-.33-1.704-.33-.637 0-1.215.112-1.73.33-.513.217-.953.516-1.32.895-.37.38-.663.824-.876 1.328-.212.5-.338 1.036-.376 1.605h8.638c-.04-.57-.17-1.108-.392-1.62z" id="Fill-22"/><path d="M76.67 5.213v1.993h.06c.407-.815 1.047-1.41 1.92-1.78.874-.37 1.832-.555 2.88-.555 1.162 0 2.177.212 3.04.63.863.415 1.58.98 2.152 1.692.574.712 1.004 1.533 1.296 2.465.29.93.435 1.916.435 2.96 0 1.045-.14 2.032-.42 2.96-.283.93-.71 1.743-1.28 2.436-.573.693-1.292 1.24-2.153 1.637-.863.4-1.868.597-3.01.597-.372 0-.784-.037-1.24-.113-.454-.075-.906-.197-1.352-.37-.445-.17-.868-.403-1.266-.698-.395-.294-.732-.658-1.002-1.094h-.06v7.573H74.2V5.213h2.47zm8.89 5.226c-.184-.657-.467-1.24-.845-1.753-.38-.512-.863-.92-1.456-1.224-.59-.303-1.284-.456-2.08-.456-.833 0-1.54.162-2.123.485-.583.324-1.057.747-1.424 1.267-.37.52-.637 1.115-.802 1.778-.163.665-.247 1.338-.247 2.023 0 .723.088 1.42.264 2.092.174.676.45 1.27.83 1.78.377.514.865.927 1.467 1.238.6.315 1.328.47 2.182.47.853 0 1.565-.16 2.14-.483.57-.322 1.03-.748 1.38-1.28.35-.532.6-1.14.756-1.824.154-.682.234-1.385.234-2.106 0-.685-.09-1.353-.277-2.008z" id="Fill-23"/><path d="M90.874 9.558c.31-.942.774-1.758 1.395-2.45.62-.694 1.386-1.24 2.3-1.64.91-.396 1.957-.597 3.14-.597 1.202 0 2.256.202 3.156.6.904.4 1.663.944 2.285 1.638.62.692 1.085 1.508 1.397 2.45.31.938.465 1.947.465 3.03 0 1.082-.155 2.09-.465 3.02-.312.928-.776 1.74-1.396 2.433-.62.694-1.38 1.236-2.284 1.626-.9.39-1.954.58-3.155.58-1.183 0-2.23-.19-3.14-.58-.914-.39-1.68-.932-2.3-1.625-.622-.693-1.087-1.504-1.396-2.432-.312-.93-.465-1.938-.465-3.02 0-1.083.152-2.092.464-3.03zm2.516 5.41c.24.692.576 1.27 1.003 1.737.428.464.926.82 1.5 1.065.57.248 1.178.37 1.818.37.64 0 1.246-.122 1.82-.37.572-.246 1.07-.6 1.497-1.065.426-.467.76-1.045 1.003-1.738.244-.694.364-1.486.364-2.38 0-.89-.12-1.683-.364-2.376-.244-.693-.577-1.276-1.003-1.75-.428-.475-.925-.836-1.498-1.082-.574-.246-1.18-.37-1.82-.37-.64 0-1.246.124-1.818.37-.573.246-1.07.607-1.5 1.082-.426.474-.76 1.057-1.002 1.75-.242.694-.366 1.487-.366 2.377 0 .894.124 1.686.366 2.38z" id="Fill-24"/><path d="M109.73 2.176c0 .782-.644 1.414-1.44 1.414-.795 0-1.44-.632-1.44-1.414 0-.776.645-1.407 1.44-1.407.796 0 1.44.63 1.44 1.406zm-2.677 3.006h2.473v14.723h-2.473V5.182z" id="Path"/><path d="M115.118 5.213v2.334h.057c1.027-1.784 2.66-2.676 4.89-2.676.988 0 1.814.134 2.47.4.66.267 1.195.635 1.602 1.11.408.476.694 1.04.86 1.695.162.653.246 1.382.246 2.18v9.682h-2.474v-9.97c0-.91-.272-1.63-.816-2.16-.543-.533-1.288-.8-2.24-.8-.757 0-1.408.114-1.964.344-.552.23-1.014.55-1.38.967-.368.417-.647.908-.83 1.466-.183.56-.276 1.173-.276 1.838v8.317h-2.474V5.213h2.328" id="Path"/><path d="M135.31 5.213V7.35h-2.996v9.14c0 .284.023.512.072.683.05.17.14.306.277.4.134.094.325.156.568.184.24.027.558.043.944.043h1.137v2.137h-1.89c-.64 0-1.19-.044-1.646-.13-.454-.085-.823-.242-1.105-.468-.282-.23-.492-.554-.625-.97-.137-.417-.204-.97-.204-1.652V7.35h-2.56V5.214h2.56V.8h2.474v4.413h2.997" id="Fill-28"/></g>
+    <g id="&lt;&gt;">
+      <path class="logo-1" d="M1.2 11.814l1.904 1.815 6.018 5.527 2.593-2.463c.236-.32.22-.758-.05-1.06l-2.37-2.045.01-.004-2.554-2.434c-.296-.334-.29-.832.026-1.153l6.87-6.53L10.524.49l-9.32 8.857c-.717.68-.717 1.785-.003 2.467" id="Path"/>
+      <path class="logo-2" d="M21.69 14.97l-1.903-1.817-6.016-5.527-2.593 2.463c-.237.32-.22.756.05 1.06l2.368 2.043-.007.002 2.552 2.436c.3.336.292.832-.025 1.155l-6.87 6.528 3.122 2.98 9.32-8.857c.716-.68.718-1.784.003-2.466" id="Path"/>
+    </g>
+  </g>
+</svg>
+          </a>
+        </section>
+        <section uni-nav-section="right">
+          <a uni-nav-item="button" href="/premium">Premium</a>
+          <div uni-nav-dropdown>
+            <a uni-nav-item>
+              <i class="fa fa-navicon"></i>
+            </a>
+            <div uni-nav-dropdown-inner="medium">
+              <a uni-nav-item href="/store">Store</a>
+              <a uni-nav-item href="/deals">Deals</a>
+              <a uni-nav-item href="/versioning">Versioning</a>
+              <a uni-nav-item href="/reference">Reference</a>
+              <a uni-nav-item href="http://community.sitepoint.com">Forums</a>
+              <div uni-nav-item="dropdown-search">
+                <form method="get" action="http://www.sitepoint.com/">
+                  <input autocomplete="off" class="small" name="s" placeholder="Search&hellip;" type="text">
+                  <button><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <nav uni-nav="medium">
+        <section uni-nav-section="left">
+          <a uni-nav-item="logo" href="/">
+            <svg class="sp-logo" viewBox="0 0 136 27">
+  <g fill-rule="evenodd">
+    <g id="sitepoint" class="logo-text"><path d="M30.213 16.645c.234.37.538.664.915.884.38.22.807.376 1.282.467.473.096.963.143 1.468.143.388 0 .796-.027 1.22-.084.43-.06.82-.162 1.18-.313.36-.152.655-.375.887-.67.233-.293.35-.667.35-1.124 0-.628-.244-1.102-.727-1.426-.485-.322-1.092-.582-1.82-.783-.726-.197-1.518-.38-2.37-.54-.853-.16-1.644-.39-2.37-.682-.727-.296-1.335-.708-1.82-1.24-.483-.53-.726-1.27-.726-2.22 0-.74.17-1.377.508-1.907.34-.53.777-.962 1.31-1.295.532-.332 1.134-.58 1.803-.74.67-.162 1.335-.244 1.994-.244.852 0 1.638.073 2.356.216.716.14 1.354.39 1.906.74.55.35.992.826 1.323 1.425.33.597.524 1.345.58 2.235h-2.47c-.042-.473-.167-.87-.38-1.18-.214-.315-.484-.566-.815-.758-.33-.186-.694-.327-1.09-.41-.4-.088-.802-.13-1.208-.13-.37 0-.742.03-1.12.085-.378.06-.724.16-1.032.3-.313.142-.563.332-.758.57-.193.237-.29.545-.29.925 0 .417.15.764.45 1.04.3.275.684.503 1.147.683.47.18.992.332 1.573.454.584.125 1.166.253 1.746.386.62.132 1.226.294 1.82.484.59.19 1.114.44 1.57.755.456.31.824.708 1.104 1.18.283.475.422 1.065.422 1.767 0 .89-.19 1.63-.567 2.22-.378.588-.873 1.065-1.483 1.423-.61.36-1.3.613-2.066.754-.766.143-1.527.213-2.283.213-.834 0-1.63-.084-2.385-.255-.758-.17-1.426-.45-2.007-.84-.582-.388-1.048-.9-1.396-1.537-.35-.637-.543-1.41-.584-2.32h2.476c.018.53.144.982.377 1.35" id="Path"/><path d="M45.69 2.208c0 .782-.646 1.414-1.44 1.414-.796 0-1.44-.632-1.44-1.414 0-.776.644-1.407 1.44-1.407.794 0 1.44.632 1.44 1.408zm-2.676 3.005h2.47v14.724h-2.47V5.213z" id="Path"/><path d="M55.673 5.213V7.35h-2.996v9.14c0 .284.023.512.072.683.047.17.14.306.276.4.136.094.325.156.567.184.242.027.556.043.945.043h1.135v2.137h-1.89c-.64 0-1.188-.044-1.645-.13-.456-.085-.824-.242-1.106-.468-.28-.23-.49-.554-.626-.97-.134-.417-.204-.97-.204-1.652V7.35h-2.557V5.214h2.557V.8h2.475v4.413h2.996" id="Fill-21"/><path d="M69.137 18.995c-1.124.836-2.542 1.252-4.247 1.252-1.204 0-2.245-.188-3.128-.568-.882-.38-1.625-.913-2.225-1.596-.602-.683-1.052-1.498-1.354-2.447-.3-.95-.47-1.985-.508-3.105 0-1.118.174-2.144.524-3.075.347-.932.836-1.738 1.47-2.42.63-.683 1.374-1.216 2.238-1.596.863-.377 1.808-.57 2.837-.57 1.337 0 2.447.273 3.33.812.883.542 1.59 1.23 2.123 2.065.533.836.902 1.748 1.107 2.734.203.99.286 1.93.248 2.82h-11.26c-.02.646.057 1.26.234 1.837.173.58.454 1.093.842 1.537.388.45.882.805 1.483 1.07.6.264 1.31.396 2.124.396 1.047 0 1.906-.234 2.573-.713.67-.47 1.112-1.193 1.325-2.16h2.443c-.33 1.65-1.057 2.893-2.18 3.728zm-.597-9.453c-.22-.512-.522-.953-.902-1.324-.378-.37-.824-.665-1.338-.882-.514-.218-1.08-.33-1.704-.33-.637 0-1.215.112-1.73.33-.513.217-.953.516-1.32.895-.37.38-.663.824-.876 1.328-.212.5-.338 1.036-.376 1.605h8.638c-.04-.57-.17-1.108-.392-1.62z" id="Fill-22"/><path d="M76.67 5.213v1.993h.06c.407-.815 1.047-1.41 1.92-1.78.874-.37 1.832-.555 2.88-.555 1.162 0 2.177.212 3.04.63.863.415 1.58.98 2.152 1.692.574.712 1.004 1.533 1.296 2.465.29.93.435 1.916.435 2.96 0 1.045-.14 2.032-.42 2.96-.283.93-.71 1.743-1.28 2.436-.573.693-1.292 1.24-2.153 1.637-.863.4-1.868.597-3.01.597-.372 0-.784-.037-1.24-.113-.454-.075-.906-.197-1.352-.37-.445-.17-.868-.403-1.266-.698-.395-.294-.732-.658-1.002-1.094h-.06v7.573H74.2V5.213h2.47zm8.89 5.226c-.184-.657-.467-1.24-.845-1.753-.38-.512-.863-.92-1.456-1.224-.59-.303-1.284-.456-2.08-.456-.833 0-1.54.162-2.123.485-.583.324-1.057.747-1.424 1.267-.37.52-.637 1.115-.802 1.778-.163.665-.247 1.338-.247 2.023 0 .723.088 1.42.264 2.092.174.676.45 1.27.83 1.78.377.514.865.927 1.467 1.238.6.315 1.328.47 2.182.47.853 0 1.565-.16 2.14-.483.57-.322 1.03-.748 1.38-1.28.35-.532.6-1.14.756-1.824.154-.682.234-1.385.234-2.106 0-.685-.09-1.353-.277-2.008z" id="Fill-23"/><path d="M90.874 9.558c.31-.942.774-1.758 1.395-2.45.62-.694 1.386-1.24 2.3-1.64.91-.396 1.957-.597 3.14-.597 1.202 0 2.256.202 3.156.6.904.4 1.663.944 2.285 1.638.62.692 1.085 1.508 1.397 2.45.31.938.465 1.947.465 3.03 0 1.082-.155 2.09-.465 3.02-.312.928-.776 1.74-1.396 2.433-.62.694-1.38 1.236-2.284 1.626-.9.39-1.954.58-3.155.58-1.183 0-2.23-.19-3.14-.58-.914-.39-1.68-.932-2.3-1.625-.622-.693-1.087-1.504-1.396-2.432-.312-.93-.465-1.938-.465-3.02 0-1.083.152-2.092.464-3.03zm2.516 5.41c.24.692.576 1.27 1.003 1.737.428.464.926.82 1.5 1.065.57.248 1.178.37 1.818.37.64 0 1.246-.122 1.82-.37.572-.246 1.07-.6 1.497-1.065.426-.467.76-1.045 1.003-1.738.244-.694.364-1.486.364-2.38 0-.89-.12-1.683-.364-2.376-.244-.693-.577-1.276-1.003-1.75-.428-.475-.925-.836-1.498-1.082-.574-.246-1.18-.37-1.82-.37-.64 0-1.246.124-1.818.37-.573.246-1.07.607-1.5 1.082-.426.474-.76 1.057-1.002 1.75-.242.694-.366 1.487-.366 2.377 0 .894.124 1.686.366 2.38z" id="Fill-24"/><path d="M109.73 2.176c0 .782-.644 1.414-1.44 1.414-.795 0-1.44-.632-1.44-1.414 0-.776.645-1.407 1.44-1.407.796 0 1.44.63 1.44 1.406zm-2.677 3.006h2.473v14.723h-2.473V5.182z" id="Path"/><path d="M115.118 5.213v2.334h.057c1.027-1.784 2.66-2.676 4.89-2.676.988 0 1.814.134 2.47.4.66.267 1.195.635 1.602 1.11.408.476.694 1.04.86 1.695.162.653.246 1.382.246 2.18v9.682h-2.474v-9.97c0-.91-.272-1.63-.816-2.16-.543-.533-1.288-.8-2.24-.8-.757 0-1.408.114-1.964.344-.552.23-1.014.55-1.38.967-.368.417-.647.908-.83 1.466-.183.56-.276 1.173-.276 1.838v8.317h-2.474V5.213h2.328" id="Path"/><path d="M135.31 5.213V7.35h-2.996v9.14c0 .284.023.512.072.683.05.17.14.306.277.4.134.094.325.156.568.184.24.027.558.043.944.043h1.137v2.137h-1.89c-.64 0-1.19-.044-1.646-.13-.454-.085-.823-.242-1.105-.468-.282-.23-.492-.554-.625-.97-.137-.417-.204-.97-.204-1.652V7.35h-2.56V5.214h2.56V.8h2.474v4.413h2.997" id="Fill-28"/></g>
+    <g id="&lt;&gt;">
+      <path class="logo-1" d="M1.2 11.814l1.904 1.815 6.018 5.527 2.593-2.463c.236-.32.22-.758-.05-1.06l-2.37-2.045.01-.004-2.554-2.434c-.296-.334-.29-.832.026-1.153l6.87-6.53L10.524.49l-9.32 8.857c-.717.68-.717 1.785-.003 2.467" id="Path"/>
+      <path class="logo-2" d="M21.69 14.97l-1.903-1.817-6.016-5.527-2.593 2.463c-.237.32-.22.756.05 1.06l2.368 2.043-.007.002 2.552 2.436c.3.336.292.832-.025 1.155l-6.87 6.528 3.122 2.98 9.32-8.857c.716-.68.718-1.784.003-2.466" id="Path"/>
+    </g>
+  </g>
+</svg>
+          </a>
+        </section>
+        <section uni-nav-section="right">
+          <a uni-nav-item href="/store">Store</a>
+          <a uni-nav-item="button" href="/premium">Premium</a>
+          <div uni-nav-dropdown>
+            <a uni-nav-item>
+              <i class="fa fa-navicon"></i>
+            </a>
+            <div uni-nav-dropdown-inner="medium">
+              <a uni-nav-item href="/deals">Deals</a>
+              <a uni-nav-item href="/versioning">Versioning</a>
+              <a uni-nav-item href="/reference">Reference</a>
+              <a uni-nav-item href="http://community.sitepoint.com">Forums</a>
+              <div uni-nav-item="dropdown-search">
+                <form method="get" action="http://www.sitepoint.com/">
+                  <input autocomplete="off" class="small" name="s" placeholder="Search&hellip;" type="text">
+                  <button><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <nav uni-nav="large">
+        <section uni-nav-section="left">
+          <a uni-nav-item="logo" href="/">
+            <svg class="sp-logo" viewBox="0 0 136 27">
+  <g fill-rule="evenodd">
+    <g id="sitepoint" class="logo-text"><path d="M30.213 16.645c.234.37.538.664.915.884.38.22.807.376 1.282.467.473.096.963.143 1.468.143.388 0 .796-.027 1.22-.084.43-.06.82-.162 1.18-.313.36-.152.655-.375.887-.67.233-.293.35-.667.35-1.124 0-.628-.244-1.102-.727-1.426-.485-.322-1.092-.582-1.82-.783-.726-.197-1.518-.38-2.37-.54-.853-.16-1.644-.39-2.37-.682-.727-.296-1.335-.708-1.82-1.24-.483-.53-.726-1.27-.726-2.22 0-.74.17-1.377.508-1.907.34-.53.777-.962 1.31-1.295.532-.332 1.134-.58 1.803-.74.67-.162 1.335-.244 1.994-.244.852 0 1.638.073 2.356.216.716.14 1.354.39 1.906.74.55.35.992.826 1.323 1.425.33.597.524 1.345.58 2.235h-2.47c-.042-.473-.167-.87-.38-1.18-.214-.315-.484-.566-.815-.758-.33-.186-.694-.327-1.09-.41-.4-.088-.802-.13-1.208-.13-.37 0-.742.03-1.12.085-.378.06-.724.16-1.032.3-.313.142-.563.332-.758.57-.193.237-.29.545-.29.925 0 .417.15.764.45 1.04.3.275.684.503 1.147.683.47.18.992.332 1.573.454.584.125 1.166.253 1.746.386.62.132 1.226.294 1.82.484.59.19 1.114.44 1.57.755.456.31.824.708 1.104 1.18.283.475.422 1.065.422 1.767 0 .89-.19 1.63-.567 2.22-.378.588-.873 1.065-1.483 1.423-.61.36-1.3.613-2.066.754-.766.143-1.527.213-2.283.213-.834 0-1.63-.084-2.385-.255-.758-.17-1.426-.45-2.007-.84-.582-.388-1.048-.9-1.396-1.537-.35-.637-.543-1.41-.584-2.32h2.476c.018.53.144.982.377 1.35" id="Path"/><path d="M45.69 2.208c0 .782-.646 1.414-1.44 1.414-.796 0-1.44-.632-1.44-1.414 0-.776.644-1.407 1.44-1.407.794 0 1.44.632 1.44 1.408zm-2.676 3.005h2.47v14.724h-2.47V5.213z" id="Path"/><path d="M55.673 5.213V7.35h-2.996v9.14c0 .284.023.512.072.683.047.17.14.306.276.4.136.094.325.156.567.184.242.027.556.043.945.043h1.135v2.137h-1.89c-.64 0-1.188-.044-1.645-.13-.456-.085-.824-.242-1.106-.468-.28-.23-.49-.554-.626-.97-.134-.417-.204-.97-.204-1.652V7.35h-2.557V5.214h2.557V.8h2.475v4.413h2.996" id="Fill-21"/><path d="M69.137 18.995c-1.124.836-2.542 1.252-4.247 1.252-1.204 0-2.245-.188-3.128-.568-.882-.38-1.625-.913-2.225-1.596-.602-.683-1.052-1.498-1.354-2.447-.3-.95-.47-1.985-.508-3.105 0-1.118.174-2.144.524-3.075.347-.932.836-1.738 1.47-2.42.63-.683 1.374-1.216 2.238-1.596.863-.377 1.808-.57 2.837-.57 1.337 0 2.447.273 3.33.812.883.542 1.59 1.23 2.123 2.065.533.836.902 1.748 1.107 2.734.203.99.286 1.93.248 2.82h-11.26c-.02.646.057 1.26.234 1.837.173.58.454 1.093.842 1.537.388.45.882.805 1.483 1.07.6.264 1.31.396 2.124.396 1.047 0 1.906-.234 2.573-.713.67-.47 1.112-1.193 1.325-2.16h2.443c-.33 1.65-1.057 2.893-2.18 3.728zm-.597-9.453c-.22-.512-.522-.953-.902-1.324-.378-.37-.824-.665-1.338-.882-.514-.218-1.08-.33-1.704-.33-.637 0-1.215.112-1.73.33-.513.217-.953.516-1.32.895-.37.38-.663.824-.876 1.328-.212.5-.338 1.036-.376 1.605h8.638c-.04-.57-.17-1.108-.392-1.62z" id="Fill-22"/><path d="M76.67 5.213v1.993h.06c.407-.815 1.047-1.41 1.92-1.78.874-.37 1.832-.555 2.88-.555 1.162 0 2.177.212 3.04.63.863.415 1.58.98 2.152 1.692.574.712 1.004 1.533 1.296 2.465.29.93.435 1.916.435 2.96 0 1.045-.14 2.032-.42 2.96-.283.93-.71 1.743-1.28 2.436-.573.693-1.292 1.24-2.153 1.637-.863.4-1.868.597-3.01.597-.372 0-.784-.037-1.24-.113-.454-.075-.906-.197-1.352-.37-.445-.17-.868-.403-1.266-.698-.395-.294-.732-.658-1.002-1.094h-.06v7.573H74.2V5.213h2.47zm8.89 5.226c-.184-.657-.467-1.24-.845-1.753-.38-.512-.863-.92-1.456-1.224-.59-.303-1.284-.456-2.08-.456-.833 0-1.54.162-2.123.485-.583.324-1.057.747-1.424 1.267-.37.52-.637 1.115-.802 1.778-.163.665-.247 1.338-.247 2.023 0 .723.088 1.42.264 2.092.174.676.45 1.27.83 1.78.377.514.865.927 1.467 1.238.6.315 1.328.47 2.182.47.853 0 1.565-.16 2.14-.483.57-.322 1.03-.748 1.38-1.28.35-.532.6-1.14.756-1.824.154-.682.234-1.385.234-2.106 0-.685-.09-1.353-.277-2.008z" id="Fill-23"/><path d="M90.874 9.558c.31-.942.774-1.758 1.395-2.45.62-.694 1.386-1.24 2.3-1.64.91-.396 1.957-.597 3.14-.597 1.202 0 2.256.202 3.156.6.904.4 1.663.944 2.285 1.638.62.692 1.085 1.508 1.397 2.45.31.938.465 1.947.465 3.03 0 1.082-.155 2.09-.465 3.02-.312.928-.776 1.74-1.396 2.433-.62.694-1.38 1.236-2.284 1.626-.9.39-1.954.58-3.155.58-1.183 0-2.23-.19-3.14-.58-.914-.39-1.68-.932-2.3-1.625-.622-.693-1.087-1.504-1.396-2.432-.312-.93-.465-1.938-.465-3.02 0-1.083.152-2.092.464-3.03zm2.516 5.41c.24.692.576 1.27 1.003 1.737.428.464.926.82 1.5 1.065.57.248 1.178.37 1.818.37.64 0 1.246-.122 1.82-.37.572-.246 1.07-.6 1.497-1.065.426-.467.76-1.045 1.003-1.738.244-.694.364-1.486.364-2.38 0-.89-.12-1.683-.364-2.376-.244-.693-.577-1.276-1.003-1.75-.428-.475-.925-.836-1.498-1.082-.574-.246-1.18-.37-1.82-.37-.64 0-1.246.124-1.818.37-.573.246-1.07.607-1.5 1.082-.426.474-.76 1.057-1.002 1.75-.242.694-.366 1.487-.366 2.377 0 .894.124 1.686.366 2.38z" id="Fill-24"/><path d="M109.73 2.176c0 .782-.644 1.414-1.44 1.414-.795 0-1.44-.632-1.44-1.414 0-.776.645-1.407 1.44-1.407.796 0 1.44.63 1.44 1.406zm-2.677 3.006h2.473v14.723h-2.473V5.182z" id="Path"/><path d="M115.118 5.213v2.334h.057c1.027-1.784 2.66-2.676 4.89-2.676.988 0 1.814.134 2.47.4.66.267 1.195.635 1.602 1.11.408.476.694 1.04.86 1.695.162.653.246 1.382.246 2.18v9.682h-2.474v-9.97c0-.91-.272-1.63-.816-2.16-.543-.533-1.288-.8-2.24-.8-.757 0-1.408.114-1.964.344-.552.23-1.014.55-1.38.967-.368.417-.647.908-.83 1.466-.183.56-.276 1.173-.276 1.838v8.317h-2.474V5.213h2.328" id="Path"/><path d="M135.31 5.213V7.35h-2.996v9.14c0 .284.023.512.072.683.05.17.14.306.277.4.134.094.325.156.568.184.24.027.558.043.944.043h1.137v2.137h-1.89c-.64 0-1.19-.044-1.646-.13-.454-.085-.823-.242-1.105-.468-.282-.23-.492-.554-.625-.97-.137-.417-.204-.97-.204-1.652V7.35h-2.56V5.214h2.56V.8h2.474v4.413h2.997" id="Fill-28"/></g>
+    <g id="&lt;&gt;">
+      <path class="logo-1" d="M1.2 11.814l1.904 1.815 6.018 5.527 2.593-2.463c.236-.32.22-.758-.05-1.06l-2.37-2.045.01-.004-2.554-2.434c-.296-.334-.29-.832.026-1.153l6.87-6.53L10.524.49l-9.32 8.857c-.717.68-.717 1.785-.003 2.467" id="Path"/>
+      <path class="logo-2" d="M21.69 14.97l-1.903-1.817-6.016-5.527-2.593 2.463c-.237.32-.22.756.05 1.06l2.368 2.043-.007.002 2.552 2.436c.3.336.292.832-.025 1.155l-6.87 6.528 3.122 2.98 9.32-8.857c.716-.68.718-1.784.003-2.466" id="Path"/>
+    </g>
+  </g>
+</svg>
+          </a>
+        </section>
+        <section uni-nav-section="right">
+          <a uni-nav-item href="/store">Store</a>
+          <a uni-nav-item href="/deals">Deals</a>
+          <a uni-nav-item href="/versioning">Versioning</a>
+          <a uni-nav-item href="/reference">Reference</a>
+          <a uni-nav-item href="http://community.sitepoint.com">Forums</a>
+          <a uni-nav-item="button" href="/premium">Premium</a>
+          <div uni-nav-item="search">
+            <form method="get" action="http://www.sitepoint.com/">
+              <input autocomplete="off"  id="search-box" name="s" placeholder="Search&hellip;" type="text">
+              <button><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </section>
+      </nav>
+
+    </header>
+
+    
+
+<div class="ChannelsNav">
+  <ul>
+    <li class="ChannelsNav_link u-html-css u-active"><a href="http://www.sitepoint.com/html-css/" data-channel="html-css" onClick="sitepoint.ChannelsNav_select(event)">HTML &amp; CSS</a></li>    <li class="ChannelsNav_link u-javascript"><a href="http://www.sitepoint.com/javascript/" data-channel="javascript" onClick="sitepoint.ChannelsNav_select(event)">JS</a></li>    <li class="ChannelsNav_link u-php"><a href="http://www.sitepoint.com/php/" data-channel="php" onClick="sitepoint.ChannelsNav_select(event)">PHP</a></li>    <li class="ChannelsNav_link u-ruby"><a href="http://www.sitepoint.com/ruby/" data-channel="ruby" onClick="sitepoint.ChannelsNav_select(event)">Ruby</a></li>    <li class="ChannelsNav_link u-mobile"><a href="http://www.sitepoint.com/mobile/" data-channel="mobile" onClick="sitepoint.ChannelsNav_select(event)">Mobile</a></li>    <li class="ChannelsNav_link u-design-ux"><a href="http://www.sitepoint.com/design-ux/" data-channel="design-ux" onClick="sitepoint.ChannelsNav_select(event)">Design &amp; UX</a></li>    <li class="ChannelsNav_link u-entrepreneur"><a href="http://www.sitepoint.com/entrepreneur/" data-channel="entrepreneur" onClick="sitepoint.ChannelsNav_select(event)">Entrepreneur</a></li>    <li class="ChannelsNav_link u-web"><a href="http://www.sitepoint.com/web/" data-channel="web" onClick="sitepoint.ChannelsNav_select(event)">Web</a></li>    <li class="ChannelsNav_link u-wordpress"><a href="http://www.sitepoint.com/wordpress/" data-channel="wordpress" onClick="sitepoint.ChannelsNav_select(event)">WP</a></li>    <li class="ChannelsNav_link u-developer-center"><a href="http://www.sitepoint.com/developer-center/" data-channel="developer-center" onClick="sitepoint.ChannelsNav_select(event)">Web Dev <br />@ Microsoft</a></li>  </ul>
+  <div class="ChannelSubNavs u-closed">
+    <div class="ChannelSubNav u-html-css"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/html-css/"><strong>All</strong></a><a href="http://www.sitepoint.com/html-css/css/animation-css/">Animation</a><a href="http://www.sitepoint.com/html-css/html/audio-video/">Audio &amp; Video</a><a href="http://www.sitepoint.com/html-css/css/bootstrap/">Bootstrap</a><a href="http://www.sitepoint.com/html-css/html/canvas-svg/">Canvas &amp; SVG</a><a href="http://www.sitepoint.com/html-css/css/">CSS</a><a href="http://www.sitepoint.com/html-css/css/foundation/">Foundation</a><a href="http://www.sitepoint.com/html-css/css/frameworks-css/">Frameworks</a><a href="http://www.sitepoint.com/html-css/html/">HTML</a><a href="http://www.sitepoint.com/html-css/css/sass-css/">Sass</a><a href="http://www.sitepoint.com/html-css/css/web-fonts/">Web Fonts</a></div></div>    <div class="ChannelSubNav u-javascript"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/javascript/"><strong>All</strong></a><a href="http://www.sitepoint.com/javascript/ajax-javascript/">Ajax</a><a href="http://www.sitepoint.com/javascript/angularjs/">AngularJS</a><a href="http://www.sitepoint.com/javascript/coffeescript/">CoffeeScript</a><a href="http://www.sitepoint.com/javascript/ember/">Ember.js</a><a href="http://www.sitepoint.com/javascript/engines/">Engines</a><a href="http://www.sitepoint.com/javascript/jquery/">jQuery</a><a href="http://www.sitepoint.com/javascript/nodejs-javascript/">Node.js</a><a href="http://www.sitepoint.com/javascript/raw-javascript/">Raw Javascript</a><a href="http://www.sitepoint.com/javascript/toolsandlibraries/">Tools and Libraries</a><a href="http://www.sitepoint.com/javascript/webgl/">WebGL</a></div></div>    <div class="ChannelSubNav u-php"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/php/"><strong>All</strong></a><a href="http://www.sitepoint.com/php/cloud-php/">Cloud</a><a href="http://www.sitepoint.com/php/cms-and-frameworks/">CMS &amp; Frameworks</a><a href="http://www.sitepoint.com/php/database/">Database</a><a href="http://www.sitepoint.com/php/debugging-and-deployment/">Debugging and Deployment</a><a href="http://www.sitepoint.com/php/development-environment-php/">Development Environment</a><a href="http://www.sitepoint.com/php/meta-php/">Meta</a><a href="http://www.sitepoint.com/php/miscellaneous-php/">Miscellaneous</a><a href="http://www.sitepoint.com/php/news-and-opinion/">News &amp; Opinion</a><a href="http://www.sitepoint.com/php/patterns-and-practices/">Patterns and Practices</a><a href="http://www.sitepoint.com/php/review-php/">Review</a><a href="http://www.sitepoint.com/php/security/">Security</a></div></div>    <div class="ChannelSubNav u-ruby"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/ruby/"><strong>All</strong></a><a href="http://www.sitepoint.com/ruby/best-practices/">Best Practices</a><a href="http://www.sitepoint.com/ruby/gems/">Gems</a><a href="http://www.sitepoint.com/ruby/getting-started/">Getting Started</a><a href="http://www.sitepoint.com/ruby/heroku/">Heroku</a><a href="http://www.sitepoint.com/ruby/jruby/">JRuby</a><a href="http://www.sitepoint.com/ruby/ruby-news-opinion/">News &amp; Opinion</a><a href="http://www.sitepoint.com/ruby/ruby-deployment/">Ruby Deployment</a><a href="http://www.sitepoint.com/ruby/ruby-on-rails/">Ruby on Rails</a><a href="http://www.sitepoint.com/ruby/rubymotion/">RubyMotion</a><a href="http://www.sitepoint.com/ruby/security-ruby/">Security</a><a href="http://www.sitepoint.com/ruby/sinatra/">Sinatra</a></div></div>    <div class="ChannelSubNav u-mobile"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/mobile/"><strong>All</strong></a><a href="http://www.sitepoint.com/mobile/android/">Android</a><a href="http://www.sitepoint.com/mobile/app-development/">App Development</a><a href="http://www.sitepoint.com/mobile/app-reviews/">App Reviews</a><a href="http://www.sitepoint.com/mobile/firefox-os-mobile/">Firefox OS</a><a href="http://www.sitepoint.com/mobile/internet-of-things-mobile/">Internet Of Things</a><a href="http://www.sitepoint.com/mobile/ios/">iOS</a><a href="http://www.sitepoint.com/mobile/web-mobile/">Mobile Web Development</a><a href="http://www.sitepoint.com/mobile/responsive-web-design/">Responsive Web Design</a><a href="http://www.sitepoint.com/mobile/ux-mobile/">UX</a><a href="http://www.sitepoint.com/mobile/wearables-mobile/">Wearables</a><a href="http://www.sitepoint.com/mobile/windows-phone/">Windows Phone</a></div></div>    <div class="ChannelSubNav u-design-ux"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/design-ux/"><strong>All</strong></a><a href="http://www.sitepoint.com/design-ux/accessibility-2/">Accessibility</a><a href="http://www.sitepoint.com/design-ux/color-2/">Color</a><a href="http://www.sitepoint.com/design-ux/design/">Design</a><a href="http://www.sitepoint.com/design-ux/illustration/">Illustration</a><a href="http://www.sitepoint.com/design-ux/logo-design/">Logo Design</a><a href="http://www.sitepoint.com/design-ux/mobile-design/">Mobile Design</a><a href="http://www.sitepoint.com/design-ux/photography-and-imagery/">Photography and Imagery</a><a href="http://www.sitepoint.com/design-ux/photoshop-2/">Photoshop</a><a href="http://www.sitepoint.com/design-ux/review-2/">Review</a><a href="http://www.sitepoint.com/design-ux/software-design/">Software</a><a href="http://www.sitepoint.com/design-ux/technology-2/">Technology</a><a href="http://www.sitepoint.com/design-ux/ux/">UX</a></div></div>    <div class="ChannelSubNav u-entrepreneur"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/entrepreneur/"><strong>All</strong></a><a href="http://www.sitepoint.com/entrepreneur/business/agile-development-business/">Agile Development</a><a href="http://www.sitepoint.com/entrepreneur/business/">Business</a><a href="http://www.sitepoint.com/entrepreneur/marketing/seo-and-sem/">SEO and SEM</a><a href="http://www.sitepoint.com/entrepreneur/marketing/content-marketing/">Content Marketing</a><a href="http://www.sitepoint.com/entrepreneur/marketing/email-marketing-marketing/">Email Marketing</a><a href="http://www.sitepoint.com/entrepreneur/business/entrepreneurship-business/">Entrepreneurship</a><a href="http://www.sitepoint.com/entrepreneur/business/finance-business/">Finance</a><a href="http://www.sitepoint.com/entrepreneur/business/freelancing-2/">Freelancing</a><a href="http://www.sitepoint.com/entrepreneur/business/legal-2/">Legal</a><a href="http://www.sitepoint.com/entrepreneur/business/management-business/">Management</a><a href="http://www.sitepoint.com/entrepreneur/marketing/">Marketing</a><a href="http://www.sitepoint.com/entrepreneur/business/revenue-2/">Revenue</a></div></div>    <div class="ChannelSubNav u-web"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/web/"><strong>All</strong></a><a href="http://www.sitepoint.com/web/apis/">APIs</a><a href="http://www.sitepoint.com/web/browsers-2/">Browsers</a><a href="http://www.sitepoint.com/web/cloud/">Cloud</a><a href="http://www.sitepoint.com/web/cms-web/">CMS</a><a href="http://www.sitepoint.com/web/community-web/">Community</a><a href="http://www.sitepoint.com/web/email-web/">Email</a><a href="http://www.sitepoint.com/web/news/">News</a><a href="http://www.sitepoint.com/web/open-source/">Open Source</a><a href="http://www.sitepoint.com/web/operating-systems/">Operating Systems</a><a href="http://www.sitepoint.com/web/web-security/">Web Security</a><a href="http://www.sitepoint.com/web/software-2/">Software</a><a href="http://www.sitepoint.com/web/web-hosting-and-domains/">Web Hosting &amp; Domains</a></div></div>    <div class="ChannelSubNav u-wordpress"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/wordpress/"><strong>All</strong></a><a href="http://www.sitepoint.com/wordpress/performance-wordpress-3/">Performance</a><a href="http://www.sitepoint.com/wordpress/plugins-wordpress-3/">Plugins</a><a href="http://www.sitepoint.com/wordpress/security-wordpress-3/">Security</a><a href="http://www.sitepoint.com/wordpress/themes/">Themes</a></div></div>    <div class="ChannelSubNav u-developer-center"><div class="ChannelSubNav_inner"><a class="ChannelSubNav_close" href="#" onClick="sitepoint.ChannelsNav_select(event)"><span>&times;</span></a><a href="http://www.sitepoint.com/developer-center/"><strong>All</strong></a><a href="http://www.sitepoint.com/developer-center/browsers-developer-center/">Browsers</a><a href="http://www.sitepoint.com/developer-center/business-developer-center/">Business</a><a href="http://www.sitepoint.com/developer-center/html-css-developer-center/">HTML &amp; CSS</a><a href="http://www.sitepoint.com/developer-center/javascript-developer-center/">JavaScript</a><a href="http://www.sitepoint.com/developer-center/mobile-developer-center/">Mobile</a><a href="http://www.sitepoint.com/developer-center/php-developer-center/">PHP</a><a href="http://www.sitepoint.com/developer-center/programming-developer-center/">Programming</a><a href="http://www.sitepoint.com/developer-center/web-developer-center/">Web</a><a href="http://www.sitepoint.com/developer-center/wordpress-developer-center/">WordPress</a><a href="http://www.sitepoint.com/developer-center/web-summit/">Web Summit</a></div></div>  </div>
+</div>
+<div class="random-hello-bar-wrapper"></div>
+<div class="Article u-leaderboardoffset">
+  
+  <div class="ArticleHead t-bg">
+
+        <a href="http://www.sitepoint.com/html-css/" class="ArticleHead_icon">
+      <span class="ArticleIcon t-border t-fill">
+        <svg viewBox="0 0 90 90">
+  <g fill-rule="evenodd">
+    <path d="M35.154434,50.4887534 L38.4787352,50.4887534 C38.3766728,49.5880008 38.1288107,48.788958 37.7351415,48.0916011 C37.3414723,47.3942442 36.8421031,46.8094902 36.237019,46.3373215 C35.6319348,45.8651527 34.946669,45.5055835 34.1812011,45.2586029 C33.4157332,45.0116223 32.6028914,44.8881339 31.7426513,44.8881339 C30.5470633,44.8881339 29.4717792,45.0987906 28.5167669,45.5201104 C27.5617546,45.9414302 26.7562028,46.5225522 26.1000874,47.2634939 C25.4439721,48.0044356 24.9409578,48.8724867 24.5910297,49.8676731 C24.2411015,50.8628595 24.06614,51.9415672 24.06614,53.1038287 C24.06614,54.2370336 24.2411015,55.2939493 24.5910297,56.2746075 C24.9409578,57.2552656 25.4439721,58.1087886 26.1000874,58.835202 C26.7562028,59.5616154 27.5617546,60.1318414 28.5167669,60.5458971 C29.4717792,60.9599527 30.5470633,61.1669774 31.7426513,61.1669774 C32.7049538,61.1669774 33.5870512,61.0216969 34.38897,60.7311316 C35.1908887,60.4405662 35.8907346,60.0192527 36.4885286,59.4671785 C37.0863226,58.9151043 37.5674666,58.246814 37.9319752,57.4622875 C38.2964837,56.677761 38.5224756,55.7988139 38.6099576,54.8254199 L35.2856565,54.8254199 C35.1544334,55.8714553 34.7935754,56.7140822 34.2030715,57.353326 C33.6125677,57.9925698 32.7924358,58.3121869 31.7426513,58.3121869 C30.9698932,58.3121869 30.3137877,58.1632744 29.774315,57.8654449 C29.2348424,57.5676154 28.7974387,57.171726 28.4620909,56.6777649 C28.126743,56.1838038 27.882526,55.6281058 27.7294324,55.0106544 C27.5763388,54.393203 27.4997932,53.7576008 27.4997932,53.1038287 C27.4997932,52.4210001 27.5763388,51.7599738 27.7294324,51.12073 C27.882526,50.4814861 28.126743,49.9112602 28.4620909,49.4100349 C28.7974387,48.9088096 29.2348424,48.5092882 29.774315,48.2114587 C30.3137877,47.9136292 30.9698932,47.7647167 31.7426513,47.7647167 C32.1654812,47.7647167 32.5700796,47.8337249 32.9564586,47.9717435 C33.3428376,48.109762 33.6891155,48.3022587 33.9953027,48.5492393 C34.3014899,48.7962198 34.556642,49.0831488 34.7607668,49.4100349 C34.9648916,49.7369209 35.0961127,50.0964902 35.154434,50.4887534 L35.154434,50.4887534 Z M43.9181495,55.6535271 L40.5938483,55.6535271 C40.5792679,56.6123928 40.7542294,57.4404917 41.1187379,58.1378486 C41.4832465,58.8352055 41.9753256,59.4090635 42.5949901,59.8594398 C43.2146546,60.3098161 43.9290806,60.6403293 44.7382895,60.8509892 C45.5474985,61.0616491 46.3822105,61.1669774 47.2424506,61.1669774 C48.3068155,61.1669774 49.2435884,61.043489 50.0527973,60.7965084 C50.8620063,60.5495279 51.539982,60.2044867 52.0867448,59.7613745 C52.6335076,59.3182623 53.045396,58.7916205 53.3224225,58.1814332 C53.599449,57.5712459 53.7379602,56.9102196 53.7379602,56.1983344 C53.7379602,55.3266383 53.5520636,54.6111318 53.1802649,54.0517935 C52.8084662,53.4924551 52.3674175,53.0457176 51.8571055,52.7115674 C51.3467936,52.3774172 50.8328443,52.1340724 50.3152422,51.9815256 C49.7976401,51.8289787 49.3930417,51.7236504 49.1014348,51.6655373 C48.124552,51.4185567 47.3335803,51.215164 46.7284962,51.0553531 C46.123412,50.8955421 45.649558,50.7357336 45.30692,50.5759226 C44.964282,50.4161117 44.7346451,50.2417751 44.6180023,50.0529076 C44.5013596,49.8640401 44.4430391,49.6170632 44.4430391,49.3119696 C44.4430391,48.9778194 44.5159397,48.7017864 44.6617431,48.4838624 C44.8075465,48.2659384 44.9934431,48.0843377 45.2194384,47.9390551 C45.4454337,47.7937724 45.6969408,47.692076 45.9739673,47.6339629 C46.2509938,47.5758499 46.5280161,47.5467938 46.8050426,47.5467938 C47.2278725,47.5467938 47.6178907,47.5831139 47.9751091,47.6557552 C48.3323275,47.7283966 48.6494451,47.851885 48.9264716,48.0262242 C49.2034981,48.2005635 49.425845,48.4402763 49.5935189,48.7453699 C49.7611928,49.0504636 49.8596086,49.4354569 49.8887693,49.9003615 L53.2130705,49.9003615 C53.2130705,48.9996089 53.0417541,48.2332542 52.699116,47.6012745 C52.356478,46.9692948 51.8935591,46.449917 51.3103455,46.0431255 C50.7271318,45.636334 50.0600912,45.3421409 49.3092037,45.1605376 C48.5583161,44.9789342 47.7746345,44.8881339 46.9581354,44.8881339 C46.258279,44.8881339 45.5584331,44.9825662 44.8585768,45.1714337 C44.1587204,45.3603012 43.5317751,45.6508622 42.9777221,46.0431255 C42.4236692,46.4353887 41.9753304,46.9257104 41.6326924,47.5141053 C41.2900544,48.1025002 41.1187379,48.7962146 41.1187379,49.5952694 C41.1187379,50.3071545 41.2536041,50.9137007 41.5233404,51.4149259 C41.7930767,51.9161512 42.1466447,52.3338326 42.5840549,52.6679828 C43.0214651,53.002133 43.5171893,53.2745339 44.0712423,53.4851938 C44.6252952,53.6958537 45.19392,53.8738224 45.7771337,54.019105 C46.345767,54.178916 46.9071017,54.3241965 47.4611547,54.4549509 C48.0152076,54.5857053 48.5109318,54.7382499 48.948342,54.9125891 C49.3857523,55.0869283 49.7393202,55.3048491 50.0090565,55.5663579 C50.2787928,55.8278667 50.413659,56.1692759 50.413659,56.5905957 C50.413659,56.982859 50.3115981,57.3061081 50.1074733,57.5603528 C49.9033486,57.8145975 49.6481964,58.0143582 49.3420093,58.1596409 C49.0358221,58.3049236 48.7077693,58.4029879 48.3578412,58.4538368 C48.007913,58.5046858 47.6798602,58.5301099 47.373673,58.5301099 C46.9216825,58.5301099 46.4842788,58.4756297 46.0614489,58.3666677 C45.638619,58.2577057 45.2704709,58.0906331 44.9569936,57.8654449 C44.6435162,57.6402567 44.3920091,57.3460637 44.2024647,56.982857 C44.0129203,56.6196503 43.9181495,56.1765448 43.9181495,55.6535271 L43.9181495,55.6535271 Z M58.7399663,55.6535271 L55.4156652,55.6535271 C55.4010848,56.6123928 55.5760463,57.4404917 55.9405548,58.1378486 C56.3050634,58.8352055 56.7971425,59.4090635 57.416807,59.8594398 C58.0364715,60.3098161 58.7508975,60.6403293 59.5601064,60.8509892 C60.3693154,61.0616491 61.2040274,61.1669774 62.0642675,61.1669774 C63.1286324,61.1669774 64.0654053,61.043489 64.8746142,60.7965084 C65.6838232,60.5495279 66.3617989,60.2044867 66.9085617,59.7613745 C67.4553245,59.3182623 67.8672129,58.7916205 68.1442394,58.1814332 C68.4212659,57.5712459 68.559777,56.9102196 68.559777,56.1983344 C68.559777,55.3266383 68.3738805,54.6111318 68.0020818,54.0517935 C67.6302831,53.4924551 67.1892344,53.0457176 66.6789224,52.7115674 C66.1686105,52.3774172 65.6546612,52.1340724 65.1370591,51.9815256 C64.6194569,51.8289787 64.2148585,51.7236504 63.9232517,51.6655373 C62.9463689,51.4185567 62.1553972,51.215164 61.5503131,51.0553531 C60.9452289,50.8955421 60.4713749,50.7357336 60.1287369,50.5759226 C59.7860989,50.4161117 59.556462,50.2417751 59.4398192,50.0529076 C59.3231765,49.8640401 59.264856,49.6170632 59.264856,49.3119696 C59.264856,48.9778194 59.3377566,48.7017864 59.48356,48.4838624 C59.6293634,48.2659384 59.81526,48.0843377 60.0412553,47.9390551 C60.2672506,47.7937724 60.5187577,47.692076 60.7957842,47.6339629 C61.0728107,47.5758499 61.349833,47.5467938 61.6268595,47.5467938 C62.0496894,47.5467938 62.4397076,47.5831139 62.796926,47.6557552 C63.1541444,47.7283966 63.471262,47.851885 63.7482885,48.0262242 C64.025315,48.2005635 64.2476619,48.4402763 64.4153358,48.7453699 C64.5830097,49.0504636 64.6814255,49.4354569 64.7105862,49.9003615 L68.0348874,49.9003615 C68.0348874,48.9996089 67.8635709,48.2332542 67.5209329,47.6012745 C67.1782949,46.9692948 66.715376,46.449917 66.1321624,46.0431255 C65.5489487,45.636334 64.8819081,45.3421409 64.1310205,45.1605376 C63.380133,44.9789342 62.5964514,44.8881339 61.7799523,44.8881339 C61.0800959,44.8881339 60.38025,44.9825662 59.6803936,45.1714337 C58.9805373,45.3603012 58.353592,45.6508622 57.799539,46.0431255 C57.2454861,46.4353887 56.7971473,46.9257104 56.4545093,47.5141053 C56.1118713,48.1025002 55.9405548,48.7962146 55.9405548,49.5952694 C55.9405548,50.3071545 56.075421,50.9137007 56.3451573,51.4149259 C56.6148936,51.9161512 56.9684616,52.3338326 57.4058718,52.6679828 C57.843282,53.002133 58.3390062,53.2745339 58.8930592,53.4851938 C59.4471121,53.6958537 60.0157369,53.8738224 60.5989506,54.019105 C61.1675839,54.178916 61.7289186,54.3241965 62.2829715,54.4549509 C62.8370245,54.5857053 63.3327487,54.7382499 63.7701589,54.9125891 C64.2075691,55.0869283 64.5611371,55.3048491 64.8308734,55.5663579 C65.1006097,55.8278667 65.2354759,56.1692759 65.2354759,56.5905957 C65.2354759,56.982859 65.133415,57.3061081 64.9292902,57.5603528 C64.7251655,57.8145975 64.4700133,58.0143582 64.1638262,58.1596409 C63.857639,58.3049236 63.5295862,58.4029879 63.179658,58.4538368 C62.8297299,58.5046858 62.5016771,58.5301099 62.1954899,58.5301099 C61.7434994,58.5301099 61.3060957,58.4756297 60.8832658,58.3666677 C60.4604359,58.2577057 60.0922878,58.0906331 59.7788105,57.8654449 C59.4653331,57.6402567 59.213826,57.3460637 59.0242816,56.982857 C58.8347371,56.6196503 58.7399663,56.1765448 58.7399663,55.6535271 L58.7399663,55.6535271 Z M74.946046,49.8598942 L74.946046,47.7282791 C74.946046,46.18438 73.5566104,45.6921214 72.3664727,45.6561161 L72.3664727,43.375716 C75.611428,43.375716 77.5266128,44.4831586 77.5266128,47.4732722 L77.5266128,49.8478924 C77.5266128,51.3664888 78.7372391,52.0463216 79.9699061,52.0463216 L79.9699061,54.3548701 C78.7372391,54.3548701 77.5266128,55.0347648 77.5266128,56.5533611 L77.5266128,58.9279195 C77.5266128,61.9180949 75.6113659,63.0254757 72.3664727,63.0254757 L72.3664727,60.7450756 C73.5566104,60.7090703 74.946046,60.2168117 74.946046,58.6729745 L74.946046,56.5412975 C74.946046,54.7162846 75.7261019,53.6800484 76.8241652,53.2005958 C75.7261019,52.7211433 74.946046,51.6849071 74.946046,49.8598942 L74.946046,49.8598942 Z M24.1647463,25.9006696 L24.1647463,40.1089576 L27.3001757,40.1089576 L27.3001757,33.9798922 L33.0717622,33.9798922 L33.0717622,40.1089576 L36.2071916,40.1089576 L36.2071916,25.9006696 L33.0717622,25.9006696 L33.0717622,31.3531498 L27.3001757,31.3531498 L27.3001757,25.9006696 L24.1647463,25.9006696 L24.1647463,25.9006696 Z M42.1185743,28.5274119 L42.1185743,40.1089576 L45.2540037,40.1089576 L45.2540037,28.5274119 L49.5277737,28.5274119 L49.5277737,25.9006696 L37.8448044,25.9006696 L37.8448044,28.5274119 L42.1185743,28.5274119 L42.1185743,28.5274119 Z M51.1653864,25.9006696 L51.1653864,40.1089576 L54.1011069,40.1089576 L54.1011069,30.1392765 L54.1410487,30.1392765 L57.6359541,40.1089576 L60.0524315,40.1089576 L63.5473368,30.0397787 L63.5872786,30.0397787 L63.5872786,40.1089576 L66.5229991,40.1089576 L66.5229991,25.9006696 L62.1094329,25.9006696 L58.9540326,35.671355 L58.9140909,35.671355 L55.5789526,25.9006696 L51.1653864,25.9006696 L51.1653864,25.9006696 Z M69.2789816,25.9006696 L69.2789816,40.1089576 L79.3642798,40.1089576 L79.3642798,37.4822153 L72.4144109,37.4822153 L72.4144109,25.9006696 L69.2789816,25.9006696 L69.2789816,25.9006696 Z M20.2454857,26.4948542 L20.2454857,29.5661653 L13.55038,32.8614806 L20.2453981,36.1652555 L20.2453981,39.2281074 L10,33.9322194 L10,31.7908228 L20.2454857,26.4948542 L20.2454857,26.4948542 Z"></path>
+  </g>
+</svg>
+      </span>
+    </a>
+    
+    <div class="ArticleHead_content">
+
+            <h1 class="ArticleHead_title">Front-end Frameworks: Custom vs. Ready-to-use Solutions</h1>
+      
+      
+      <div class="ArticleHead_metas">
+
+          <a href="http://www.sitepoint.com/author/igerchev/" class="ArticleHead_meta">
+      <span class="ArticleHead_metaIcon">
+        <img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/09/igerchev.jpg" width="80" height="80" alt="Ivaylo Gerchev" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo" />      </span>
+      Ivaylo Gerchev  </a>
+
+        <div class="ArticleHead_meta">
+                    <div class="ArticleHead_metaIcon">
+            <svg viewBox="0 0 33 35" xmlns="http://www.w3.org/2000/svg">
+  <path d="M31.522 5.9c-.49-.487-1.07-.73-1.742-.73h-2.477V3.32c0-.848-.304-1.574-.91-2.178-.607-.604-1.336-.906-2.187-.906h-1.24c-.85 0-1.58.302-2.186.906-.607.604-.91 1.33-.91 2.177v1.85h-7.432V3.32c0-.848-.303-1.574-.91-2.178C10.922.538 10.193.236 9.34.236H8.104c-.852 0-1.58.302-2.188.906-.606.604-.91 1.33-.91 2.177v1.85H2.53c-.67 0-1.25.24-1.742.73S.05 6.96.05 7.63V32.3c0 .666.246 1.244.736 1.733.49.488 1.07.732 1.742.732h27.25c.672 0 1.253-.244 1.743-.732.49-.49.74-1.067.74-1.734V7.63c0-.668-.24-1.246-.73-1.734zm-9.174-2.58c0-.18.057-.328.173-.444.12-.115.27-.173.45-.173h1.24c.18 0 .33.058.45.173.117.116.175.264.175.443v5.54c0 .18-.06.325-.173.44-.116.116-.264.174-.445.174h-1.24c-.18 0-.33-.058-.444-.174-.114-.112-.17-.26-.17-.44V3.32zm-14.865 0c0-.18.058-.328.174-.444.117-.115.265-.173.446-.173H9.34c.182 0 .33.058.446.173.116.116.175.264.175.443v5.54c0 .18-.05.325-.17.44-.11.116-.26.174-.44.174H8.11c-.18 0-.33-.058-.446-.174-.116-.112-.174-.26-.174-.44V3.32zM29.78 32.296H2.527v-19.73h27.25v19.73z" fill-rule="evenodd"/>
+</svg>
+          </div>
+          <time datetime="2014-11-04" pubdate>November 04, 2014</time>
+                  </div>
+        <div class="ArticleHead_meta">
+                  </div>
+        <div class="ArticleHead_meta">
+                    <thumbvoter-heading id="93934" rating="0" />
+        </div>
+      </div>
+    </div>
+    <div class="ArticleHead_supplemental">
+      <channel-subscribe data-slug="html-css"></channel-subscribe>
+    </div>
+  </div>
+
+
+  <div class="ArticleBody" data-hellobar="content">
+    <div class="ArticleContent u-showseries">
+      <article-sharer data-url="http%3A%2F%2Fwww.sitepoint.com%2Ffront-end-frameworks-custom-vs-ready-use-solutions%2F" data-title="Front-end Frameworks: Custom vs. Ready-to-use Solutions"></article-sharer>
+      <div class="ThumbVoter_container">
+                <thumbvoter-buttons id="93934"
+          url="https://www.sitepoint.com/wp-admin/admin-ajax.php"
+          user_rating="0"
+          nonce="b451a6bd70"
+        />
+      </div>
+      
+      
+  <div class="ArticleLeaderboard u-leaderboard">
+    <hr />
+    <div class="ArticleLeaderboard_ad">
+      <div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-product-66"><adblock-msg  data-message="Microsoft - helping keep SitePoint free"></adblock-msg></div><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-37"><!-- SP2013_Articles_728x90_1 -->
+<div id="div-gpt-ad-article-header" style="width:728px; height:90px;" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-article-header"); });</script>
+ </div></div>    </div>
+    <hr />
+  </div>
+
+      
+  <div class="ArticleCopy language-">
+    <p>The dilemma “custom versus ready-to-use” is pretty common in the Web world. Whether we talk about CSS, JavaScript, PHP, or a framework in any other programming language, the question of whether to use a prebuilt code base versus using your own code arises often. This is especially important for front-end frameworks, because they are directly responsible for the look and feel of a website.</p>
+<p>Frameworks like <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> have changed the way people build their websites. These tools make it a lot easier, even for non-programmers, to create complete websites with minimal effort and time investment. But such “automated” website building can have some serious drawbacks.</p>
+<p>So the question is: Is the easier solution the better one? </p>
+<p>Although most people tend to choose the tool that gives them the fastest and the easiest results, this, as we’ll see later, is not always the best possible option. Also, it seems that many people are more or less confused when they need to choose between custom and ready-to-use variants. That’s why in the next part of this article we’re going to examine the problem in more detail by exploring the advantages and downsides of each choice, which I hope will help you to make the right decision when this question arises.</p>
+<h2 id="advantages-of-ready-to-use-solutions">Advantages of Ready-to-use Solutions</h2>
+<p>The reason most people prefer ready-to-use frameworks is that they offer great advantages. Let’s see the most important of them.</p>
+<ul>
+<li><strong>You don’t have to be a programmer</strong>. Decent knowledge of HTML and CSS is enough, in most cases, to build a good-looking and functioning website. All the prior programming has already been done by skilled developers.</li>
+<li>As already mentioned, a framework solution seriously <strong>minimizes the time and efforts</strong> involved in the website building process.</li>
+<li>The <strong>plug-and-play functionality</strong>. We need only to type some markup to get a fully functional piece of code (a well-cooked HTML, CSS, and JavaScript soup) without worrying about styling, dynamic behavior, and so on.</li>
+<li>When we download a framework’s package, we can be sure that we have <strong>stable and well-tested code</strong>. This means that your website will look and behave properly on all browsers that the framework supports.</li>
+<li>We get <strong>regular updates with bug fixes and new features</strong> for the framework.</li>
+<li>Because of the popularity that ready-to-use frameworks have, you can rely on <strong>help from the community</strong> in the form of articles, tutorials (for the framework learning process), and framework add-ons and extensions (for the website building process).</li>
+</ul>
+<p>As you can see, there are so many advantages to using a framework. But if you rethink it well, you’ll see that most of these refer to the time and efforts you save during the learning and/or building process. These advantages are not strictly related to the quality of the final product. In short, they concern <em>you</em> and <em>your time and efforts</em>, but not necessarily <em>your product</em>.</p>
+<p>This is the exact opposite to our users’ and clients’ interests – they care about how good your product is, and not how much time and effort you’ve invested to learn the framework and build the website.</p>
+<p>So, the easy is good, but…</p>
+<h2 id="downsides-of-ready-to-use-solutions">Downsides of Ready-to-use Solutions</h2>
+<p>Everything comes with a price. Despite the many advantages that a ready-to-use framework offers, there are also some serious drawbacks. For an average user, or for one with modest requirements, the downsides listed below can seem insignificant, but for one looking for the best possible quality, these downsides are of highest importance.</p>
+<ul>
+<li>Although the plug-and-play functionality sounds great, before you take advantage of using it you’ll need to <strong>invest time to learn</strong> how to use it.</li>
+<li>Because “ready-to-use” often means “one-for-all”, such a framework attempts to solve every single problem for every single situation that a front-end developer could encounter, which leads to <strong>a lot of unnecessary code</strong>.</li>
+<li>As it’s made for mass consumption, you can be almost certain that <strong>you’ll need to tweak a ready-to-use framework to meet your requirements</strong>, which will take <strong>additional time</strong>.</li>
+<li>If you don’t make any customizations <strong>your website will look like all the rest</strong>, which can damage your product’s image or at the very least do nothing to improve it.</li>
+<li>In many cases, the framework you’ve chosen won’t have all the components you need, which can lead to an <strong>additional third party integration step</strong> (possibly in the form of bloated jQuery plugins or similar).</li>
+<li>You have <strong>no control over the code</strong>. If the development team decides to remove some component from the framework, then you are forced to accept that change. If you don’t want it, you have to use the a modified or older version of their product.</li>
+</ul>
+<p>For the above reasons, you are unable to achieve some of the most important goals in website building such as uniqueness, high performance, strong compatibility and usability, and a compact and unified code base and appearance. This is very important, because in web development, especially for mobile, every small improvement can cause great impact. So, “being average” is not a smart decision.</p>
+<h2 id="advantages-of-custom-solutions">Advantages of Custom Solutions</h2>
+<p>If you’re looking for the best results, then a <em>custom framework</em> can provide some strong advantages.</p>
+<ul>
+<li>Once built, a custom solution <strong>will save you time and effort in the future</strong> because it was built precisely to your long-term needs.</li>
+<li>You or your team <strong>will not need to learn how to use or customize it</strong> because you’ll know your framework inside out (although new team members will need to learn it).</li>
+<li>It’s <strong>optimized to satisfy only your needs, not everyone’s</strong>. This way it’s far easier to achieve high performance.</li>
+<li>You include <strong>only what you need and in the way you need it</strong>. No unnecessary stuff, no bloated code.</li>
+<li>You have <strong>full control over the code and its design implementation</strong>. You can be sure that some really great feature won’t be removed or deprecated in future releases unless it aligns with your agenda.</li>
+<li><strong>Complete modularity</strong>. The flexibility of your framework depends only on you. You can use only those parts of your framework that you need for a particular project.</li>
+<li><strong>A unified code base</strong>. You can minimize the need of third party components, which means less mix-and-match work.</li>
+<li><strong>Uniqueness of your website is 100% guaranteed</strong>. Default themes in most of frameworks are pretty much the same, so you still need to create your own. But for your framework you can create unique themes from the very beginning.</li>
+<li>Despite the initial extra work and maintenance, the process will teach you a lot, and thus will improve your skills as a developer.</li>
+</ul>
+<p>These advantages may also impact in a positive way your time and efforts, but in this case they are addressed much more to the quality of the final product, thus giving you the ability to achieve the best performance, functionality, and appearance.</p>
+<h2 id="downsides-of-custom-solutions">Downsides of Custom Solutions</h2>
+<p>The most significant downsides to a custom made framework are the time and effort needed when building, testing, maintaining, and improving it. But the downsides can be seen as benefits. Let’s see what I mean.</p>
+<ul>
+<li>It takes <strong>more time and effort</strong>. This is true for the early stages, but in the long run this work will save you time and effort.</li>
+<li><strong>You need to test and maintain the code</strong>. But only for the browsers you are targeting.</li>
+<li>The <strong>bug fixes, updates, and new features are built by you</strong>. This takes time, but you update only what you need, and implement only those features that are required for your projects. Nothing superfluous.</li>
+</ul>
+<h2 id="the-third-solution">The Third Solution</h2>
+<p>I don’t know to what extent people realize it, but besides the custom and ready-to-use options there is actually a third solution, which I call a <em>semi-custom</em> solution. We use a semi-custom solution any time we take a ready-to-use framework such as Bootstrap and perform hard customizations on it.</p>
+<p>In fact, a ready-to-use framework is such only if we use it as is, or with minor cosmetic touches (soft customization). But when we do that the net result is a recognizable website with pretty much the same look and feel as many others using the same framework. On the other hand, if you need to customize deeply a particular framework before using it, then we can’t say that the framework is truly a ready-to-use solution.</p>
+<h2 id="is-reinventing-the-wheel-a-real-problem">Is “Reinventing the Wheel” a Real Problem?</h2>
+<p>In forums, blogs, and similar resources, one of the main arguments against custom made frameworks is the question: Why reinvent the wheel? </p>
+<p>At first glance such an argument sounds reasonable, but honestly, I can’t agree with such thinking. So, let’s consider the problem a bit more deeply. </p>
+<p>If people hadn’t reinvented the wheel over and over again throughout history, today we would still be using primitive carts. Reinventing the wheel can be a real problem only if you replicate the wheel in the exact same manner, that is, being a copycat. But if you make it more useful, valuable, and better suited to your needs, then there is no problem.</p>
+<p>If you take it even more deeply you will see that the whole evolution process is based on the “reinventing the wheel” paradigm. Every new phase is a replication of the previous one, but with improvements (sometimes significant, sometimes not). </p>
+<p>Let’s now consider the word <em>develop</em>. This word <a href="http://dictionary.reference.com/browse/develop?s=t">means</a> “bring to a more advanced or effective state”, “to cause to grow or expand”, “to elaborate or expand in detail”. In other words, we’re not creating something from nothing; we’re improving what we already have. So, for a web developer this means to write better and more effective code, and to expand that code in detail, that is, adding additional functionality on top of the existing one.</p>
+<p>As you can see, reinventing the wheel is not something you need to avoid. It’s a natural process and it occurs very often. So don’t be afraid to reinvent the wheel.</p>
+<p>One more thing I want to point out is that making your own custom framework has nothing to do with <a href="http://blog.tastejs.com/yet-another-framework-syndrome-yafs">Yet Another Framework Syndrome (YAFS)</a>. Building a custom framework <strong>can’t</strong> “lead to confusion and frustration”, and <strong>you don’t need</strong> “to manually evaluate 300 different options in order to select something maintainable.” You make the framework for yourself, not for the mass. You know exactly what you need, and implement it in the exact manner you want and consider best practice. So, there is no confusion, no frustration, and no <a href="https://the-pastry-box-project.net/addy-osmani/2014-January-19">front-end choice paralysis</a>.</p>
+<p>Finally, here is a <a href="http://en.wikipedia.org/wiki/Koan">kōan</a> to meditate on: Why are people “reinventing the wheel” by having their own children, when they can instead adopt the children of others?! :)</p>
+<h2 id="how-can-you-make-the-right-choice">How Can You Make the Right Choice?</h2>
+<p>To make the right decision, you need to ask the right question. The right question is not: What is the proper decision? The right question is: What is the proper decision <em>for me</em>?</p>
+<p>The above means that before you make the right decision you need a clear vision about your needs, capabilities, and resources.</p>
+<p>As you may have already guessed, I personally prefer a custom solution any time when I’m capable of building it. But this is the proper decision for me (of course, not in every situation). To find out whether it’s a proper decision for you too, you need to answer the following questions:</p>
+<ul>
+<li>Am I capable to create it?</li>
+<li>Do I have enough free/extra time to do it?</li>
+<li>Is it reasonable to make it?</li>
+</ul>
+<p>(Note: You may be completely capable of doing it and you may have plenty of free time, but if it doesn’t make sense, you should not. If some small adjustments of an existing framework will do the job, then the time and effort to build a completely new product may not be justified.)</p>
+<p>If the answers of the above questions are all positive, then the custom solution is definitely the proper decision <strong>for you</strong>.</p>
+<p>I hope that this article has solved the dilemma “custom versus ready-to-use”, and from now on you’ll be able to make the right decision easier and with more confidence. </p>
+  </div>
+
+  <div>
+        <thumbvoter-buttons id="93934"
+      url="https://www.sitepoint.com/wp-admin/admin-ajax.php"
+      user_rating="0"
+    />
+  </div>
+
+      
+    <div class="Author t-border">
+      <div class="Author_header">
+        <a href="http://www.sitepoint.com/author/igerchev/">
+          <img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/09/igerchev.jpg" width="80" height="80" alt="Ivaylo Gerchev" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo" />          <span class="Author_name t-color">
+            Ivaylo Gerchev          </span>
+                  </a>
+        <div class="Author_social">
+                  </div>
+      </div>
+      <div class="Author_bio">Ivaylo Gerchev is a self-taught web developer/designer. He loves to play with HTML, CSS, jQuery, PHP, and WordPress, as well as Photoshop and Illustrator. Ivaylo's motto is "Minimum effort for maximum effect!"</div>
+    </div>
+
+        
+  <div class="ArticleContent_endcap">
+    <div class="widget maestro maestro-content-type-lead hide-for-mobile-SP" id="maestro-product-1"><div class="LeadPanel">
+  <div class="LeadPanel_sponsor">
+    <div class="LeadPanel_sponsor_logo"><img src="http://d1nlfd9mjn1pae.cloudfront.net/wp-content/uploads/2015/08/1439443964fc_logo_324x69.png" /></div>
+    <p><h2>Free Guide:</h2>
+<h3>How to Choose the Right Charting Library for Your Application</h3>
+<p>How do you make sure that the charting library you choose has everything you need? Sign up to receive this detailed guide from FusionCharts, which explores all the factors you need to consider before making the decision.</p></p>
+  </div>
+
+  <form class="LeadPanel_form promo-panel_action">
+    <input type="email" name="email" class="LeadPanel_form_email" placeholder="Work Email" required="required" />
+    <input type="text" name="name" class="LeadPanel_form_name" placeholder="Name" required="required" />
+    <input type="text" name="company" class="LeadPanel_form_company" placeholder="Company" required="required" />
+    <select name="country" class="LeadPanel_form_country" placeholder="Country" required="required" /><option value="" disabled selected>Country</option><option value='Afghanistan'>Afghanistan</option><option value='Albania'>Albania</option><option value='Algeria'>Algeria</option><option value='American Samoa'>American Samoa</option><option value='Andorra'>Andorra</option><option value='Angola'>Angola</option><option value='Anguilla'>Anguilla</option><option value='Antarctica'>Antarctica</option><option value='Antigua and Barbuda'>Antigua and Barbuda</option><option value='Argentina'>Argentina</option><option value='Armenia'>Armenia</option><option value='Aruba'>Aruba</option><option value='Australia'>Australia</option><option value='Austria'>Austria</option><option value='Azerbaijan'>Azerbaijan</option><option value='Bahamas'>Bahamas</option><option value='Bahrain'>Bahrain</option><option value='Bangladesh'>Bangladesh</option><option value='Barbados'>Barbados</option><option value='Belarus'>Belarus</option><option value='Belgium'>Belgium</option><option value='Belize'>Belize</option><option value='Benin'>Benin</option><option value='Bermuda'>Bermuda</option><option value='Bhutan'>Bhutan</option><option value='Bolivia'>Bolivia</option><option value='Bosnia and Herzegowina'>Bosnia and Herzegowina</option><option value='Botswana'>Botswana</option><option value='Bouvet Island'>Bouvet Island</option><option value='Brazil'>Brazil</option><option value='British Indian Ocean Territory'>British Indian Ocean Territory</option><option value='Brunei Darussalam'>Brunei Darussalam</option><option value='Bulgaria'>Bulgaria</option><option value='Burkina Faso'>Burkina Faso</option><option value='Burundi'>Burundi</option><option value='Cambodia'>Cambodia</option><option value='Cameroon'>Cameroon</option><option value='Canada'>Canada</option><option value='Cape Verde'>Cape Verde</option><option value='Cayman Islands'>Cayman Islands</option><option value='Central African Republic'>Central African Republic</option><option value='Chad'>Chad</option><option value='Chile'>Chile</option><option value='China'>China</option><option value='Christmas Island'>Christmas Island</option><option value='Cocos (Keeling) Islands'>Cocos (Keeling) Islands</option><option value='Colombia'>Colombia</option><option value='Comoros'>Comoros</option><option value='Congo'>Congo</option><option value='Congo, the Democratic Republic of the'>Congo, the Democratic Republic of the</option><option value='Cook Islands'>Cook Islands</option><option value='Costa Rica'>Costa Rica</option><option value='Cote d'Ivoire'>Cote d'Ivoire</option><option value='Croatia (Hrvatska)'>Croatia (Hrvatska)</option><option value='Cuba'>Cuba</option><option value='Cyprus'>Cyprus</option><option value='Czech Republic'>Czech Republic</option><option value='Denmark'>Denmark</option><option value='Djibouti'>Djibouti</option><option value='Dominica'>Dominica</option><option value='Dominican Republic'>Dominican Republic</option><option value='East Timor'>East Timor</option><option value='Ecuador'>Ecuador</option><option value='Egypt'>Egypt</option><option value='El Salvador'>El Salvador</option><option value='Equatorial Guinea'>Equatorial Guinea</option><option value='Eritrea'>Eritrea</option><option value='Estonia'>Estonia</option><option value='Ethiopia'>Ethiopia</option><option value='Falkland Islands (Malvinas)'>Falkland Islands (Malvinas)</option><option value='Faroe Islands'>Faroe Islands</option><option value='Fiji'>Fiji</option><option value='Finland'>Finland</option><option value='France'>France</option><option value='France Metropolitan'>France Metropolitan</option><option value='French Guiana'>French Guiana</option><option value='French Polynesia'>French Polynesia</option><option value='French Southern Territories'>French Southern Territories</option><option value='Gabon'>Gabon</option><option value='Gambia'>Gambia</option><option value='Georgia'>Georgia</option><option value='Germany'>Germany</option><option value='Ghana'>Ghana</option><option value='Gibraltar'>Gibraltar</option><option value='Greece'>Greece</option><option value='Greenland'>Greenland</option><option value='Grenada'>Grenada</option><option value='Guadeloupe'>Guadeloupe</option><option value='Guam'>Guam</option><option value='Guatemala'>Guatemala</option><option value='Guinea'>Guinea</option><option value='Guinea-Bissau'>Guinea-Bissau</option><option value='Guyana'>Guyana</option><option value='Haiti'>Haiti</option><option value='Heard and Mc Donald Islands'>Heard and Mc Donald Islands</option><option value='Holy See (Vatican City State)'>Holy See (Vatican City State)</option><option value='Honduras'>Honduras</option><option value='Hong Kong'>Hong Kong</option><option value='Hungary'>Hungary</option><option value='Iceland'>Iceland</option><option value='India'>India</option><option value='Indonesia'>Indonesia</option><option value='Iran (Islamic Republic of)'>Iran (Islamic Republic of)</option><option value='Iraq'>Iraq</option><option value='Ireland'>Ireland</option><option value='Israel'>Israel</option><option value='Italy'>Italy</option><option value='Jamaica'>Jamaica</option><option value='Japan'>Japan</option><option value='Jordan'>Jordan</option><option value='Kazakhstan'>Kazakhstan</option><option value='Kenya'>Kenya</option><option value='Kiribati'>Kiribati</option><option value='Korea, Democratic People's Republic of'>Korea, Democratic People's Republic of</option><option value='Korea, Republic of'>Korea, Republic of</option><option value='Kuwait'>Kuwait</option><option value='Kyrgyzstan'>Kyrgyzstan</option><option value='Lao, People's Democratic Republic'>Lao, People's Democratic Republic</option><option value='Latvia'>Latvia</option><option value='Lebanon'>Lebanon</option><option value='Lesotho'>Lesotho</option><option value='Liberia'>Liberia</option><option value='Libyan Arab Jamahiriya'>Libyan Arab Jamahiriya</option><option value='Liechtenstein'>Liechtenstein</option><option value='Lithuania'>Lithuania</option><option value='Luxembourg'>Luxembourg</option><option value='Macau'>Macau</option><option value='Macedonia, The Former Yugoslav Republic of'>Macedonia, The Former Yugoslav Republic of</option><option value='Madagascar'>Madagascar</option><option value='Malawi'>Malawi</option><option value='Malaysia'>Malaysia</option><option value='Maldives'>Maldives</option><option value='Mali'>Mali</option><option value='Malta'>Malta</option><option value='Marshall Islands'>Marshall Islands</option><option value='Martinique'>Martinique</option><option value='Mauritania'>Mauritania</option><option value='Mauritius'>Mauritius</option><option value='Mayotte'>Mayotte</option><option value='Mexico'>Mexico</option><option value='Micronesia, Federated States of'>Micronesia, Federated States of</option><option value='Moldova, Republic of'>Moldova, Republic of</option><option value='Monaco'>Monaco</option><option value='Mongolia'>Mongolia</option><option value='Montserrat'>Montserrat</option><option value='Morocco'>Morocco</option><option value='Mozambique'>Mozambique</option><option value='Myanmar'>Myanmar</option><option value='Namibia'>Namibia</option><option value='Nauru'>Nauru</option><option value='Nepal'>Nepal</option><option value='Netherlands'>Netherlands</option><option value='Netherlands Antilles'>Netherlands Antilles</option><option value='New Caledonia'>New Caledonia</option><option value='New Zealand'>New Zealand</option><option value='Nicaragua'>Nicaragua</option><option value='Niger'>Niger</option><option value='Nigeria'>Nigeria</option><option value='Niue'>Niue</option><option value='Norfolk Island'>Norfolk Island</option><option value='Northern Mariana Islands'>Northern Mariana Islands</option><option value='Norway'>Norway</option><option value='Oman'>Oman</option><option value='Pakistan'>Pakistan</option><option value='Palau'>Palau</option><option value='Panama'>Panama</option><option value='Papua New Guinea'>Papua New Guinea</option><option value='Paraguay'>Paraguay</option><option value='Peru'>Peru</option><option value='Philippines'>Philippines</option><option value='Pitcairn'>Pitcairn</option><option value='Poland'>Poland</option><option value='Portugal'>Portugal</option><option value='Puerto Rico'>Puerto Rico</option><option value='Qatar'>Qatar</option><option value='Reunion'>Reunion</option><option value='Romania'>Romania</option><option value='Russian Federation'>Russian Federation</option><option value='Rwanda'>Rwanda</option><option value='Saint Kitts and Nevis'>Saint Kitts and Nevis</option><option value='Saint Lucia'>Saint Lucia</option><option value='Saint Vincent and the Grenadines'>Saint Vincent and the Grenadines</option><option value='Samoa'>Samoa</option><option value='San Marino'>San Marino</option><option value='Sao Tome and Principe'>Sao Tome and Principe</option><option value='Saudi Arabia'>Saudi Arabia</option><option value='Senegal'>Senegal</option><option value='Seychelles'>Seychelles</option><option value='Sierra Leone'>Sierra Leone</option><option value='Singapore'>Singapore</option><option value='Slovakia (Slovak Republic)'>Slovakia (Slovak Republic)</option><option value='Slovenia'>Slovenia</option><option value='Solomon Islands'>Solomon Islands</option><option value='Somalia'>Somalia</option><option value='South Africa'>South Africa</option><option value='South Georgia and the South Sandwich Islands'>South Georgia and the South Sandwich Islands</option><option value='Spain'>Spain</option><option value='Sri Lanka'>Sri Lanka</option><option value='St. Helena'>St. Helena</option><option value='St. Pierre and Miquelon'>St. Pierre and Miquelon</option><option value='Sudan'>Sudan</option><option value='Suriname'>Suriname</option><option value='Svalbard and Jan Mayen Islands'>Svalbard and Jan Mayen Islands</option><option value='Swaziland'>Swaziland</option><option value='Sweden'>Sweden</option><option value='Switzerland'>Switzerland</option><option value='Syrian Arab Republic'>Syrian Arab Republic</option><option value='Taiwan, Province of China'>Taiwan, Province of China</option><option value='Tajikistan'>Tajikistan</option><option value='Tanzania, United Republic of'>Tanzania, United Republic of</option><option value='Thailand'>Thailand</option><option value='Togo'>Togo</option><option value='Tokelau'>Tokelau</option><option value='Tonga'>Tonga</option><option value='Trinidad and Tobago'>Trinidad and Tobago</option><option value='Tunisia'>Tunisia</option><option value='Turkey'>Turkey</option><option value='Turkmenistan'>Turkmenistan</option><option value='Turks and Caicos Islands'>Turks and Caicos Islands</option><option value='Tuvalu'>Tuvalu</option><option value='Uganda'>Uganda</option><option value='Ukraine'>Ukraine</option><option value='United Arab Emirates'>United Arab Emirates</option><option value='United Kingdom'>United Kingdom</option><option value='United States'>United States</option><option value='United States Minor Outlying Islands'>United States Minor Outlying Islands</option><option value='Uruguay'>Uruguay</option><option value='Uzbekistan'>Uzbekistan</option><option value='Vanuatu'>Vanuatu</option><option value='Venezuela'>Venezuela</option><option value='Vietnam'>Vietnam</option><option value='Virgin Islands (British)'>Virgin Islands (British)</option><option value='Virgin Islands (U.S.)'>Virgin Islands (U.S.)</option><option value='Wallis and Futuna Islands'>Wallis and Futuna Islands</option><option value='Western Sahara'>Western Sahara</option><option value='Yemen'>Yemen</option><option value='Yugoslavia'>Yugoslavia</option><option value='Zambia'>Zambia</option><option value='Zimbabwe'>Zimbabwe</option></select>
+    <input type="hidden" name="content" value="1" />
+    <button class="LeadPanel_action button radius">Email Me the Guide</button>
+</form>
+</div></div>  </div>
+
+      
+  <div class="ArticleLeaderboard">
+    <div class="ArticleLeaderboard_ad">
+      <div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-product-68"><adblock-msg  data-message="Microsoft - helping keep SitePoint free"></adblock-msg></div><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-181"><!-- SP_Articles_728x90_Bottom -->
+<div id="div-gpt-ad-1438136496246-0" style="" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1438136496246-0"); });</script>
+ </div></div>    </div>
+    <hr />
+  </div>
+
+
+      <a id="comments"></a>
+      
+<div id="disqus_thread">
+            <div id="dsq-content">
+
+
+            <ul id="dsq-comments">
+                    <li class="comment even thread-even depth-1" id="dsq-comment-119307">
+        <div id="dsq-comment-header-119307" class="dsq-comment-header">
+            <cite id="dsq-cite-119307">
+                <span id="dsq-author-user-119307">bl4de</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-119307" class="dsq-comment-body">
+            <div id="dsq-comment-message-119307" class="dsq-comment-message"><p>Good post. IMHO to be able to choose the right solution for particular application (not only web application), developer needs to have some experience with both approaches.</p>
+<p>There&#8217;s nothing worst than developer which KNOWS that one solution is better than other, without ANY experience with one of them.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-127459">
+        <div id="dsq-comment-header-127459" class="dsq-comment-header">
+            <cite id="dsq-cite-127459">
+http://twitter.com/clamiax                <span id="dsq-author-user-127459">Claudio</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-127459" class="dsq-comment-body">
+            <div id="dsq-comment-message-127459" class="dsq-comment-message"><p>You&#8217;re partially right: there&#8217;s no need to jump from the window if there are stairs around, even if you never experienced jumping from the window. That is,  there are things which need to be experienced, something else just needs a bit of thinking.</p>
+<p>I would like to point this out, which to me makes a lot of sense. I hope you&#8217;ll find an enjoiable read.</p>
+<p><a href="http://discuss.joelonsoftware.com/default.asp?joel.3.219431.12" rel="nofollow">http://discuss.joelonsoftware.com/default.asp?joel.3.219431.12</a></p>
+<p>Regards,<br />
+Claudio</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-119342">
+        <div id="dsq-comment-header-119342" class="dsq-comment-header">
+            <cite id="dsq-cite-119342">
+http://www.reformadesites.com.br                <span id="dsq-author-user-119342">Matteus Barbosa</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-119342" class="dsq-comment-body">
+            <div id="dsq-comment-message-119342" class="dsq-comment-message"><p>I really appreciate your approach. An important thing to highlight is that you must look at the needs of your corporation</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-119344">
+        <div id="dsq-comment-header-119344" class="dsq-comment-header">
+            <cite id="dsq-cite-119344">
+http://www.reformadesites.com.br                <span id="dsq-author-user-119344">Matteus Barbosa</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-119344" class="dsq-comment-body">
+            <div id="dsq-comment-message-119344" class="dsq-comment-message"><p>I really appreciate your approach. An important thing to highlight is that you must focus at the needs of your corporation much more than in your team skills or just in the wow needs. Your topic was centered on the frontend context, but we csn say it is very worth to backend as well. My tip for you guys is to design your frontend screens first, then , you must really think about maintenability, using strong community supported and documented frameworks, and keeping your custom code following its rules and weakly clued</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-127463">
+        <div id="dsq-comment-header-127463" class="dsq-comment-header">
+            <cite id="dsq-cite-127463">
+                <span id="dsq-author-user-127463">Miloš Đakonović</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-127463" class="dsq-comment-body">
+            <div id="dsq-comment-message-127463" class="dsq-comment-message"><p>Just like in most other situations &#8211; no easy and short answers. It depends. Are you really going to reinvent Normalize.css (part of Bootstrap &amp; HTML5B) ? Really, after all efforts done by number of developers that has noted small inconsistencies in various devices/platforms? Or are you up to have Bootstrap 101 template for all your customers and to continue to claim that you&#8217;re legitimate developer.</p>
+<p>Again, it depends. Up to some point usage of frameworks are MUST DO. Above that point you&#8217;re delegitimizing yourself as developer.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-119347">
+        <div id="dsq-comment-header-119347" class="dsq-comment-header">
+            <cite id="dsq-cite-119347">
+                <span id="dsq-author-user-119347">Mark Richards</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-119347" class="dsq-comment-body">
+            <div id="dsq-comment-message-119347" class="dsq-comment-message"><p>Funny this! Your new personal solution is some one else&#8217;s &#8216;off the shelf&#8217; framework &#8230;..<br />
+I say this as the author of Cliqon.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-119410">
+        <div id="dsq-comment-header-119410" class="dsq-comment-header">
+            <cite id="dsq-cite-119410">
+                <span id="dsq-author-user-119410">Таканов Маекава</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-119410" class="dsq-comment-body">
+            <div id="dsq-comment-message-119410" class="dsq-comment-message"><p>Good post. I have also read some of Ivaylo Gerchev&#8217;s posts before.I feel that his point of view and way of explanation are really reasonable and well considered. Thanks  Gerchev.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-119561">
+        <div id="dsq-comment-header-119561" class="dsq-comment-header">
+            <cite id="dsq-cite-119561">
+http://cneude-createur-web.com                <span id="dsq-author-user-119561">Matthieu</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-119561" class="dsq-comment-body">
+            <div id="dsq-comment-message-119561" class="dsq-comment-message"><p>It&#8217;s really interesting. In fact I developed websites with frameworks (like Bootstrap) and without. I think to have a total control on your code is the most important thing if you want to be able to keep and update it easily on a long time period.</p>
+<p>Well like many says: it depends. Depends of your deadline and the lifetime of your website. For very short deadlines, it&#8217;s really easy to use a framework (if you know him well of course) but if you have more time, I prefer to develop the front end part from scratch as well.</p>
+<p>Well development is also and most of the time analysing what you need in order to choose proper tool. There is no good answer.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-121990">
+        <div id="dsq-comment-header-121990" class="dsq-comment-header">
+            <cite id="dsq-cite-121990">
+                <span id="dsq-author-user-121990">Yassine El Houari</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-121990" class="dsq-comment-body">
+            <div id="dsq-comment-message-121990" class="dsq-comment-message"><p>I see this comments plugin a lot. Can you please tell me what is its name? Thank you. And by the way, a great article. It was very helpful.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+            </ul>
+
+
+        </div>
+
+    </div>
+
+<script type="text/javascript">
+var disqus_url = 'http://www.sitepoint.com/front-end-frameworks-custom-vs-ready-use-solutions/';
+var disqus_identifier = '93934 http://www.sitepoint.com/?p=93934';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'sitepointproduction';
+var disqus_title = "Front-end Frameworks: Custom vs. Ready-to-use Solutions";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=93934';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+    </div>
+    
+  <div class="ArticleAside">
+    <div class="ArticleAside_row">
+      <div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-product-67"><adblock-msg data-sidebar="true"  data-message="Microsoft - helping keep SitePoint free"></adblock-msg></div><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-1"><!-- SP2013_Articles_300x250_1 -->
+<div id="div-gpt-ad-1392428092543-0" style="width:300px; height:250px;" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1392428092543-0"); });</script>
+ </div></div>    </div>
+        <div class="ArticleBox" data-kaizen="related">
+      <h3 class="ArticleBox_header t-bg">
+        <i class="ArticleBox_icon fa fa-coffee"></i> Recommended for you
+      </h3>
+      <div class="ArticleBox_content">
+        <ul class="ArticleBox_list t-list">
+                  <li><a href="http://www.sitepoint.com/radar-week-bees-machineguns/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=html-css" data-kz-track-on-click="2470">On Our Radar This Week: Bees with Machine Guns</a></li>
+                  <li><a href="http://www.sitepoint.com/practical-oop-building-quiz-app-bootstrapping/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=html-css" data-kz-track-on-click="2470">Practical OOP: Building a Quiz App - Bootstrapping</a></li>
+                  <li><a href="http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=html-css" data-kz-track-on-click="2470">Responsive Data Tables: A Comprehensive List of Solutions</a></li>
+                  <li><a href="http://www.sitepoint.com/component-driven-css-frameworks/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=html-css" data-kz-track-on-click="2470">Component-Driven CSS Frameworks</a></li>
+                  <li><a href="http://www.sitepoint.com/10-web-predictions-2015/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=html-css" data-kz-track-on-click="2470">10 Web Predictions for 2015</a></li>
+                </ul>
+      </div>
+    </div>
+      <div class="ArticleBox u-premium-preview"><div class="widget maestro maestro-content-type-spad " id="maestro-product-10"><div class="SPAdPanel u-image">
+  <div class="ArticleBox_header">
+    <i class="ArticleBox_icon fa fa-rocket"></i> Learn JavaScript for free!
+  </div>
+  <div class="ArticleBox_content">
+    <div class="SPAdPanel_content">
+      <div class="SPAdPanel_tagline">Free course: Introduction to JavaScript</div>
+      <p class="SPAdPanel_creative">Yours when you take up a free 14-day SitePoint Premium trial.</p>
+    </div>
+    <div class="SPAdPanel_image" style="background-image: url(https://d2sis3lil8ndrq.cloudfront.net/courses/ab4b843e-8e5c-4d0c-b78e-d8917a76b283.png)"></div>
+    <div class="SPAdPanel_cta">
+      <a class="SPAdPanel_ctaButton button" href=http://sitepoint.com/premium/store/cart/add/410,412?clear=true&utm_source=sitepoint&utm_medium=relatedpremiumsidebar&utm_term=frontend&utm_campaign=freeintroJS>Get Free Course</a>
+    </div>
+  </div>
+</div></div></div>
+    <div class="ArticleAside_row ArticleAside_newboxads"><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-177"><!-- SP_Articles_200x125_1 -->
+<div id="div-gpt-ad-1436815711585-0" style="" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1436815711585-0"); });</script>
+ </div></div><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-178"><!-- SP_Articles_200x125_2 -->
+<div id="div-gpt-ad-1436815711585-1" style="" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1436815711585-1"); });</script>
+ </div></div><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-179"><!-- SP_Articles_200x125_3 -->
+<div id="div-gpt-ad-1436815711585-2" style="" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1436815711585-2"); });</script>
+ </div></div><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-180"><!-- SP_Articles_200x125_4 -->
+<div id="div-gpt-ad-1436815711585-3" style="" class="adspot ">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1436815711585-3"); });</script>
+ </div></div></div>
+    <div class="ArticleAside_row"><div class="widget maestro maestro-content-type-ad hide-for-mobile-SP" id="maestro-product-49"><!-- SP2013_Articles_300x600_1 -->
+<div id="div-gpt-ad-1392428092543-4" style="" class="adspot Sticky">
+    <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1392428092543-4"); });</script>
+ </div></div><div class="widget maestro maestro-content-type-html hide-for-tablet-SP hide-for-mobile-SP" id="maestro-product-30"><ads-accordion
+  data='[
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436948941NewRelic.jpg", 
+       "height": 250,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=320947582&iu=/7448792/Click_Tracker", 
+      "height": 250,
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928740NR-Accordion-v2-Tile-APM-300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316961902&iu=/7448792/Click_Tracker",
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928759NR-Accordion-v2-Tile-Insights-300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316961782&iu=/7448792/Click_Tracker",
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928765NR-Accordion-v2-Tile-Mobile300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316959022&iu=/7448792/Click_Tracker",
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928753NR-Accordion-v2-Tile-Browser-300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316960702&iu=/7448792/Click_Tracker",
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928721NR-Accordion-v2-Tile-Synthetics-300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316958062&iu=/7448792/Click_Tracker",
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928775NR-Accordion-v2-Tile-Servers-300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316959862&iu=/7448792/Click_Tracker",
+      "expandable": false
+    },
+    {
+      "src": "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436928770NR-Accordion-v2-Tile-Plugins-300x50.png",
+      "height": 50,
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=316960582&iu=/7448792/Click_Tracker",
+      "expandable": false
+    }
+  ]'
+
+tracking="newrelic-synthetics-html-css-channel"
+></ads-accordion></div></div>
+  </div>
+
+  </div>
+
+  <div class="u-accordion-end"></div>
+      <div class="ChannelPanel t-bg">
+      <strong class="ChannelPanel_context">Next Article</strong>
+
+      <a class="ChannelPanel_heading" href="http://www.sitepoint.com/practical-oop-building-quiz-app-bootstrapping/?utm_source=sitepoint&utm_medium=nextpost&utm_term=html-css" data-kz-track-on-click="2470">
+        <span class="ChannelPanel_underline">Practical OOP: Building a Quiz App - Bootstrapping</span>
+        <i class="fa fa-arrow-right"></i>
+      </a>
+
+          </div>
+
+</div>
+
+ <div className="ArticleRecapture"><js-recapture type="html-css" title="On Our Radar This Week: Bees with Machine Guns" href="http://www.sitepoint.com/?p=98797" /></div>
+
+    <footer class="Footer" role="contentinfo">
+      <div class="Footer-inner">
+        <ul class="FooterList">
+          <li class="FooterList_item">
+            <h3>About</h3>
+          </li>
+          <li class="FooterList_item">
+            <a href="/about-us">Our Story</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/advertising">Advertise</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/press">Press Room</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="http://reference.sitepoint.com/css" target="_blank">Reference</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/legals">Terms of Use</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/legals/#privacy">Privacy Policy</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="https://sitepoint.zendesk.com/hc/en-us" target="_blank">FAQ</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="mailto:feedback@sitepoint.com">Contact Us</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/write-for-us">Contribute</a>
+          </li>
+        </ul>
+
+        <ul class="FooterList">
+          <li class="FooterList_item">
+            <h3>Visit</h3>
+          </li>
+          <li class="FooterList_item">
+            <a href="/">SitePoint Home</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="http://community.sitepoint.com">Forums</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/newsletter">Newsletters</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/premium">Premium</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/sass-reference">References</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/store">Store</a>
+          </li>
+          <li class="FooterList_item">
+            <a href="/versioning">Versioning</a>
+          </li>
+        </ul>
+
+        <ul class="FooterList">
+          <li class="FooterList_item">
+            <h3>Connect</h3>
+          </li>
+          <li class="FooterList_item FooterList_item--icons">
+            <a href="/feed/">
+              <i class="fa fa-rss-square"></i>
+            </a>
+            <a href="/newsletter/">
+              <i class="fa fa-envelope-square"></i>
+            </a>
+            <a href="https://www.facebook.com/sitepoint" target="_blank">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            <a href="http://twitter.com/sitepointdotcom" target="_blank">
+              <i class="fa fa-twitter-square"></i>
+            </a>
+            <a href="https://plus.google.com/+sitepoint" target="_blank">
+              <i class="fa fa-google-plus-square"></i>
+            </a>
+          </li>
+        </ul>
+
+        <p class="Footer_copyright">
+          &copy; 2000 &ndash; 2015 SitePoint Pty. Ltd.
+        </p>
+      </div>
+    </footer>
+
+    <div id="search-dropdown">
+      <div data-role="search-for">
+        <a class="search-link" href="#">Search for...</a>
+      </div>
+      <ul data-role="results"></ul>
+    </div>
+    <script type="text/javascript">var sp_canSeeAds;</script>
+    <script type="text/javascript" src="http://www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/ad-server.js"></script>
+    				<script type='text/javascript'><!--
+			var seriesdropdown = document.getElementById("orgseries_dropdown");
+			if (seriesdropdown) {
+			 function onSeriesChange() {
+					if ( seriesdropdown.options[seriesdropdown.selectedIndex].value != ( 0 || -1 ) ) {
+						location.href = "http://www.sitepoint.com/series/"+seriesdropdown.options[seriesdropdown.selectedIndex].value;
+					}
+				}
+				seriesdropdown.onchange = onSeriesChange;
+			}
+			--></script>
+			        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'sitepointproduction';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        
+<!-- START Parse.ly Include: Standard -->
+<div id="parsely-root" style="display: none">
+  <div id="parsely-cfg" data-parsely-site="sitepoint.com"></div>
+</div>
+<script>
+(function(s, p, d) {
+  var h=d.location.protocol, i=p+"-"+s,
+      e=d.getElementById(i), r=d.getElementById(p+"-root"),
+      u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+      :"static."+p+".com";
+  if (e) return;
+  e = d.createElement(s); e.id = i; e.async = true;
+  e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script>
+<!-- END Parse.ly Include: Standard -->
+<!-- Scroll Triggered Boxes v2.0.2 - https://wordpress.org/plugins/scroll-triggered-boxes/-->			<div class="stb-container stb-bottom-left-container">
+				<div class="scroll-triggered-box stb stb-111076 stb-bottom-left"
+				     id="stb-111076"
+				     style="display: none;">
+					<div class="stb-content">
+						<p style="text-align: center; font-size: 120%; font-colour: #ffffff;"> <img class="logo" src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1437632566Screen-Shot-2015-07-23-at-4.19.46-pm.png" alt="Screen Shot 2015-07-23 at 4.19.46 pm" width="150" height="26" /></p>
+<p style="text-align: center; font-size: 120%; font-colour: #ffffff;">Get a <strong>free</strong> year of<br />
+SitePoint Premium +<br />
+hosting from BlueHost<br />
+for $3.50/month</p>
+<p style="text-align: center;"><strong><a class="myButton" href="http://bluehost.com/track/sitepointmedia/sp_slideup?page=/affiliate/learnable">Get this deal</a></strong></p>
+<p style="text-align: center;"><img class="logo" src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1437631923Bluehost_logo.png" alt="" width="125" height="40" /></p>
+					</div>
+					<span class="stb-close">&times;</span>
+				</div>
+			</div>
+			<div id="stb-overlay"></div><!-- / Scroll Triggered Box --><script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-foot-2ccb196fe87a5be77ffa2f1056898596.js?ver=4.2.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"http:\/\/www.sitepoint.com\/wp-content\/plugins\/wp-postratings","ajax_url":"https:\/\/www.sitepoint.com\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 post at a time.","image":"thumbs","image_ext":"gif","max":"2","show_loading":"1","show_fading":"1","custom":"1"};
+var ratings_1_mouseover_image=new Image();ratings_1_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_1_over."+ratingsL10n.image_ext;var ratings_2_mouseover_image=new Image();ratings_2_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_2_over."+ratingsL10n.image_ext;;
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.sitepoint.com/wp-content/plugins/wp-postratings/postratings-js.js?ver=1.82'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var STB_Global_Options = {"testMode":""};
+var STB_Box_Options = {"111076":{"id":111076,"title":"2015_Bluehost_Box_01","trigger":"percentage","triggerPercentage":65,"triggerElementSelector":"","animation":"slide","cookieTime":7,"autoHide":false,"autoShow":true,"position":"bottom-left","minimumScreenWidth":400}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.sitepoint.com/wp-content/plugins/scroll-triggered-boxes/assets/js/script.min.js?ver=2.0.2'></script>
+
+  </body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using memcached
+Object Caching 2125/2162 objects using memcached
+Content Delivery Network via Amazon Web Services: CloudFront: dab1nmslvvntp.cloudfront.net
+
+ Served from: www.sitepoint.com @ 2015-09-22 10:58:54 by W3 Total Cache -->

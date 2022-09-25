@@ -1,0 +1,215 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {background:white;}
+
+
+.header_wrapper{
+	width: fixed;
+	height: 50px;
+	margin: auto;
+	background-color: white;
+}
+
+
+.footer_wrapper{
+	width: 100%;
+	height: 100px;
+	margin: auto;
+	background-color: #696969;
+	color: white;
+	font-size:15px;
+	font-family: Segoe UI Light;
+}
+
+.menubar{
+	position: fixed;
+	margin: auto;
+	width: 	100%;
+	height: 90px;
+	background: black;
+	z-index: 100;
+	color: white;
+	font-size:26px;
+	font-family: Segoe UI Light;
+	padding: 15px 0;
+
+}
+.content_wrapper{
+	width: 100%;
+	height: 800px;
+	margin: auto;
+	background-color : #696969;
+	opacity:0.5;
+	color: black;
+	font-size:36px;
+	font-family: Segoe UI Light;
+	padding: 15px 0;
+}
+.
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+}
+
+#menu {
+	padding: 35px;
+	margin: 0;
+	line-height: auto;
+
+}
+
+#menu li{
+	list-style: none;
+	display: inline;
+}
+#button li{
+	list-style: none;
+	display: right;
+}
+#menu a{
+	text-decoration: none;
+	color: white;
+	padding: 15px;
+	margin: 15px;
+	font-size:18px;
+	font-family: Segoe UI Light;
+	
+}
+#button a{
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+	margin: 10px;
+	font-size:15px;
+	font-family: Segoe UI Light;
+	
+}
+#menu a:hover{
+	color: #20B2AA;
+	font-weight:bolder;
+	text-decoration: Italic;
+}
+
+.button {
+  border-radius: 3px;
+  font-family: Segoe UI Light;
+  color: #000000;
+  font-size: 15px;
+  background: #ffffff;
+  padding: auto;
+  float: right;
+ 
+}
+
+.button:hover {
+  background: #9fb8c7;
+  text-decoration: none;
+}
+
+#horizontalmenu ul 
+{
+	padding:10px; 
+	margin: 5px; 
+	list-style:no-open-quote; 
+} 
+#horizontalmenu li 
+{ 
+	float:left; 
+	position:relative; 
+	padding-right:50;  
+	border-style:inset; 
+	list-style: nowrap;
+	display: inline;
+} 
+#horizontalmenu li ul 
+{ 
+	display:none; 
+	position:absolute; 
+} 
+#horizontalmenu li:hover ul
+{ 
+	display: inline; 
+	background: #A9A9A9; 
+	height:auto; 
+	width:auto; 
+	color: black;
+} 
+#horizontalmenu a{
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	margin: 5px;
+	font-size:18px;
+	font-family: Segoe UI Light;
+}
+#horizontalmenu a:hover{
+	color: #20B2AA;
+	font-weight:bolder;
+}
+
+/*------------------------------ HEADER ------------------------------*/
+#header {
+	background-color: black;
+	height: 88px;
+	border-bottom: 1px solid #fff;
+	padding: 36px 0 0;
+}
+#header > div {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0 10px;
+	text-align: right;
+}
+ #logo {
+	float: left;
+}
+/** Navigation **/
+#navigation {
+	display: inline-block;
+	line-height: 80px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 345px; 
+}
+#navigation li {
+	float: left;
+	margin: 0 15px;
+}
+#navigation li:first-child {
+	margin-left: 0;
+}
+#navigation li a {
+	color: #FFFFFF;
+	font-family: "Oswald";
+	font-size: 14px;
+	padding: 15px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#navigation li a:hover, #navigation li.selected a {
+	color: #0000FF;
+}
